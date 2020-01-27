@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Shreya Balaji and Jenna Phillips">
+  <meta name="description" content="Blind Cupid is a dating site that allows people to 
+  interact and message based on common interests and passions, rather than on their appearance - 
+  faces are hidden until prfiles recieve a certain amount of points. This page is the 
+  profile page of the site, where users can build their profile, insert their profile picture, and 
+  add facts about themselves as well as their preferences."> 
+  <title>Blind Cupid</title>
+
+  <link rel="shortcut icon" href="favicon.png" type="image/png"> 
+  <link href="css/style.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <!-- link in Bootstrap here -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <header class="border_color">
+    <div class="container">
+      <h1>Blind Cupid</h1>
+      <p class="lead">Build your profile and add your preferences for your true love!</p>
+    </div>
+  </header>
+
+  <main>
+
+      <section class="profile_image">
+          <!-- code reference https://www.w3schools.com/howto/howto_css_image_overlay_icon.asp-->
+          <div class="container_profile">
+              <img class="propicture" src="img/user_pic.jpg" alt="profile picture">
+          </div>
+      </section>
+      <section class="bio_info">
+          <h2>About You</h2>
+          <form>
+              <div>
+                  <label for="answer">What/who is your ideal date?:</label>
+                  <textarea class="form-control" id="answer" name="answer"></textarea>
+              </div>
+              <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
+          </form>
+          <form>
+              <div>
+                  <label for="answer">What are you looking for on this site, a long term relationship or fling?:</label>
+                  <textarea class="form-control" id="answer" name="answer"></textarea>
+              </div>
+              <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
+          </form>
+          <form>
+              <div>
+                  <label for="answer">Dog or Cat? Beach or mountains? Rain or shine?:</label>
+                  <textarea class="form-control" id="answer" name="answer"></textarea>
+              </div>
+              <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
+          </form>
+      </section>
+      <section class="preferences">
+        <h2>Preferences</h2>
+        <form>
+          <div>
+            <input type="radio" name="gender" value="male" checked> Male<br>
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="radio" name="gender" value="other"> Non-Gender Conforming<br>
+            <input type="radio" name="gender" value="other"> Anyone & Everyone!
+          </div>
+          </form>
+          
+          <form class="location" action="/action_page.php">
+            Location:<br>
+            <input type="text" name="location"><br>
+            How many miles radius:<br>
+            <input type="text" name="radius"><br>
+          </form>
+
+          <form>
+              <div>
+                <p>Would you prefer someone in...</p>
+                <input type="radio" name="gender" value="male" checked> School<br>
+                <input type="radio" name="gender" value="other"> Work
+              </div>
+          </form>
+
+          <input type="submit" value="Submit" aria-label="submit">
+
+
+      
+      
+      </section>
+
+      
+    
+    
+    
+
+      <nav>
+          <ul>
+              <li><a href="index.html"><i class="fas fa-home" aria-label="home feed"></i></a></li>
+              <li><a href="likes.html"><i class="far fa-heart" aria-label="Your likes"></i></a></li>
+              <li><a href="messaging.html"><i class="fas fa-comments" aria-label="messages"></i></a></li>
+              <li><a href="profile.html"><i class="fas fa-user" aria-label="profile"></i></a></li>
+          </ul>
+      </nav>
+
+</main>
+<footer>
+    <p>Authors: Shreya & Jenna shreyajenna@blindcupid.com Blind Cupid &#169</p></footer>
+</body>
+</html>
