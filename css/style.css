@@ -57,6 +57,23 @@ a:hover {
     border-bottom-width: .1rem;
 }
 
+.messaging-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+}
+.text-bar {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    flex-grow: 1;
+}
+
+.send-button {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    size: 3px;
+}
+
 nav {
     position: fixed;
     bottom: 0;
@@ -164,7 +181,9 @@ nav {
     padding: 10px;
 }
 
-
+.hidden {
+    display: none;
+}
 
 
 @media (min-width: 598px) {

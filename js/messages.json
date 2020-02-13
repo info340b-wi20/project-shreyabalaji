@@ -2,7 +2,7 @@
     "chats": [
         {
             "name": "Sophie",
-	    "picture" : "/img/sophie.jpg",
+	        "picture" : "/img/sophie.jpg",
             "lastMessage": "hellooooo",
             "id": "123",
             "messages": [

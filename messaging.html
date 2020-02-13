@@ -19,71 +19,72 @@
 
 </head>
 
+<body>
 <main>
-        <header class="border_color">
-            <div class="container">
-                <h1>Harry</h1>
-                <p class="lead">Point Total: 20/100</p>
-                <img class="match" src="img/harry.jpg" alt="your match">
-            </div>
-        </header>
     
-        <body>
-            <!--chat bubbles source code:https://www.w3schools.com/howto/howto_css_chat.asp-->
-            <div class="chat">
-                <img src="img/harry.jpg" alt="Avatar">
-                <p>Hey! How's it going?<button class="heart"><i class="far fa-heart"></i></button></p>
-                <span class="time-right">11:00</span>
+        <!--chat bubbles source code:https://www.w3schools.com/howto/howto_css_chat.asp-->
+        <ol class="msg">
+            <!-- <li> 
+                <div class="chat">
+                    <img src="img/harry.jpg" alt="Avatar">
+                    <p>Hey! How's it going?<button class="heart"><i class="far fa-heart"></i></button></p>
+                    <span class="time-right">11:00</span>
+                </div>
+            </li>
+            <li>   
+                <div class="chat you">
+                    <img src="img/user_pic.jpg" alt="Avatar" class="right">
+                    <p>Hi! Good. How are you?</p>
+                    <span class="time-left">11:01</span>
+                </div>
+            </li>
+            <li>
+                <div class="chat">
+                    <img src="img/harry.jpg" alt="Avatar">
+                    <p>Great! What hobbies do you enjoy?<button class="heart"><i class="far fa-heart"></i></button></p>
+                    <span class="time-right">11:02</span>
+                </div>
+            </li>
+            <li>
+                <div class="chat you">
+                    <img src="img/user_pic.jpg" alt="Avatar" class="right">
+                    <p>I love to knit, reenact shakespeare, and watch The Office.</p>
+                    <span class="time-left">11:05</span>
+                </div>
+            </li> -->
+        </ol>
+        <!-- <form class="messaging-input">
+            <div class="text-bar">
+                <label for="enter-text">Message:</label>
+                <textarea class="form-control" id="enter-text" name="enter-text"></textarea>
             </div>
-                
-            <div class="chat you">
-                <img src="img/user_pic.jpg" alt="Avatar" class="right">
-                <p>Hi! Good. How are you?</p>
-                <span class="time-left">11:01</span>
-            </div>
-                
-            <div class="chat">
-                <img src="img/harry.jpg" alt="Avatar">
-                <p>Great! What hobbies do you enjoy?<button class="heart"><i class="far fa-heart"></i></button></p>
-                <span class="time-right">11:02</span>
-            </div>
-                
-            <div class="chat you">
-                <img src="img/user_pic.jpg" alt="Avatar" class="right">
-                <p>I love to knit, reenact shakespeare, and watch The Office.</p>
-                <span class="time-left">11:05</span>
-            </div>
-
+            <button type="send" class="send-button"><i class="far fa-paper-plane" aria-label="send"></i></button>
+        </form> -->
+        <div id="chats"></div>
+        <div id="chat" class="hidden">
+            <header class="border_color">
+                <div class="container">
+                    <h1 id="name"></h1>
+                    <p class="lead">Point Total: 20/100</p>
+                    <img class="match" src="img/harry.jpg" alt="your match">
+                </div>
+            </header>
+        </div>
         <nav>
             <ul>
-                <li><a href=""><i class="fas fa-home" aria-label="home feed"></i></a></li>
-                <li><a href=""><i class="far fa-heart" aria-label="Your likes"></i></a></li>
-                <li><a href=""><i class="fas fa-comments" aria-label="messages"></i></a></li>
-                <li><a href=""><i class="fas fa-user" aria-label="profile"></i></a></li>
+                <li><a href="index.html"><i class="fas fa-home" aria-label="home feed"></i></a></li>
+                <li><a href="likes.html"><i class="far fa-heart" aria-label="Your likes"></i></a></li>
+                <li><a href="messaging.html"><i class="fas fa-comments" aria-label="messages"></i></a></li>
+                <li><a href="profile.html"><i class="fas fa-user" aria-label="profile"></i></a></li>
             </ul>
         </nav>
-    </body>
 </main>
-      
-    
-    
-    
 
-<nav>
-        <ul>
-            <li><a href="index.html"><i class="fas fa-home" aria-label="home feed"></i></a></li>
-            <li><a href="likes.html"><i class="far fa-heart" aria-label="Your likes"></i></a></li>
-            <li><a href="messaging.html"><i class="fas fa-comments" aria-label="messages"></i></a></li>
-            <li><a href="profile.html"><i class="fas fa-user" aria-label="profile"></i></a></li>
-        </ul>
-    </nav>
-
-</main>
 <footer>
     <p>Authors: Shreya & Jenna shreyajenna@blindcupid.com Blind Cupid &#169</p>
 </footer>
-    <script>src="js/messages.js"</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js"></script>
+    <script src="js/messages.js"></script>   
     <!--<script src = "https://cdnjs.cloudflare.com/libs/es6-promise/4.1.1/es6-promise.auto.min.js"></script>-->
 </body>
 </html>
