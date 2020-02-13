@@ -1,0 +1,52 @@
+{
+    "chats": [
+        {
+            "name": "Sophie",
+            "lastMessage": "hellooooo",
+            "id": "123",
+            "messages": [
+                {
+                    "sender": "",
+                    "receiver": "",
+                    "content": "hi! whats up?"
+                }
+            ]
+        },
+        {
+            "name": "Kailer",
+            "lastMessage": "going to the gym",
+            "id": "124",
+            "messages": [
+                {
+                    "sender": "",
+                    "receiver": "",
+                    "content": "hey wyd"
+                }
+            ]
+        },
+        {
+            "name": "Rithik",
+            "lastMessage": "Let's hangout!",
+            "id": "125",
+            "messages": [
+                {
+                    "sender": "",
+                    "receiver": "",
+                    "content": "hiii"
+                }
+            ]
+        },
+        {
+            "name": "Jeanie",
+            "lastMessage": "Blind Cupid is such a cool app!",
+            "id": "126",
+            "messages": [
+                {
+                    "sender": "",
+                    "receiver": "",
+                    "content": "Blind Cupid is such a cool app!!"
+                }
+            ]
+        }
+    ]
+}
