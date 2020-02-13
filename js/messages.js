@@ -3,7 +3,8 @@
 let state = {
     chosen: [],
     messageIndex: 0,
-    chats: []
+    chats: [],
+    messageList: null
 }
 
 
@@ -32,7 +33,8 @@ function renderOneChat(chatObj, index) {
     // create chat content
     let chatDiv = document.createElement("div");
     chatDiv.addEventListener("click", function() {
-        console.log(state.chats[index])
+        state.messageList = state.chats[index].messages;
+        console.log(state.chats[index]);
         let chat = document.querySelector('#chat');
         chat.classList.remove('hidden');
         chats.classList.add('hidden');
@@ -40,7 +42,13 @@ function renderOneChat(chatObj, index) {
         h1.textContent = chatObj.name; 
         let img = document.querySelector('.match');
         img.src = chatObj.picture;
-        img.classList.add('.propicture');
+        img.classList.add('propicture');
+        renderMessages();
+        // try and make a back button
+        
+        // make a new function
+        // make a new div that holds a new card with the text we need in it
+
         // function renderChat() {
         //     let li = document.createElement("li");
         //     li.classList.add("chat", "list-group-item"); //what does list group item do??
@@ -80,6 +88,26 @@ function renderOneChat(chatObj, index) {
     chatDiv.appendChild(chatMessage);
     li.appendChild(chatDiv);
     return li;
+}
+
+function renderMessages() {
+    let chatsToRender = {};
+    let chatList = document.querySelector("#chat-list");
+    chatList.innerHTML = "";
+    // for every chat -> you'll remake them
+}
+
+function renderMessage() {
+    // build the div for messages
+}
+
+function addChat() {
+    // let value from message input
+    let chatObj = {
+        content: "value"
+    }
+    selectedChats.push(chatObj);
+    renderChats();
 }
 
 function fetchChats() {
