@@ -33,6 +33,39 @@ function renderOneChat(chatObj, index) {
     let chatDiv = document.createElement("div");
     chatDiv.addEventListener("click", function() {
         console.log(state.chats[index])
+        let chat = document.querySelector('#chat');
+        chat.classList.remove('hidden');
+        chats.classList.add('hidden');
+        let h1 = document.querySelector('#name');
+        h1.textContent = chatObj.name; 
+        let img = document.querySelector('.match');
+        img.src = chatObj.picture;
+        img.classList.add('.propicture');
+        // function renderChat() {
+        //     let li = document.createElement("li");
+        //     li.classList.add("chat", "list-group-item"); //what does list group item do??
+        //     // create div w/ img
+        //     let imgDiv = document.createElement("div");
+        //     let img = document.createElement("img");
+        //     img.classList.add("chat-pic");
+        //     img.src = chatObj.picture;
+        //     img.alt = chatObj.name;
+        //     img.classList.add('chat', 'img');
+        //     imgDiv.appendChild(img);
+        //     li.appendChild(imgDiv);
+        //     // create chat content
+        //     let chatDiv = document.createElement("div");
+        //     chatDiv.classList.add("chat-content");
+        //     let h4 = document.createElement("h4");
+        //     h4.innerHTML = chatObj.name + (chatObj.unread ? "<span class='unread'/>" : "");
+        //     chatDiv.classList.add('chat'); //Are we adding the class to the right div?
+        //     chatDiv.appendChild(h4);
+        //     let chatMessage = document.createElement("div");
+        //     chatMessage.innerHTML = (chatObj.from ? "<strong>You:</strong> " : "") + chatObj.lastMessage; //or use last message in message array??
+        //     chatDiv.appendChild(chatMessage);
+        //     li.appendChild(chatDiv);
+        //     return li;
+        // }
         // hide chats
         // fill chat with the content from the chats list at that index
         // unhide chat
