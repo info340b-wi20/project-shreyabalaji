@@ -3,7 +3,8 @@
 let state = {
     chosen: [],
     messageIndex: 0,
-    chats: []
+    chats: [],
+    messageList: null
 }
 
 
@@ -32,7 +33,8 @@ function renderOneChat(chatObj, index) {
     // create chat content
     let chatDiv = document.createElement("div");
     chatDiv.addEventListener("click", function() {
-        console.log(state.chats[index])
+        state.messageList = state.chats[index].messages;
+        console.log(state.chats[index]);
         let chat = document.querySelector('#chat');
         chat.classList.remove('hidden');
         chats.classList.add('hidden');
