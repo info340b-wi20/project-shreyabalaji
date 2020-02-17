@@ -4,7 +4,8 @@ let state = {
     chosen: [],
     messageIndex: 0,
     chats: [],
-    messageList: null
+    messageList: null,
+    currentChat: null
 }
 
 
@@ -56,6 +57,13 @@ function renderOneChat(chatObj, index) {
     chatMessage.innerHTML = (chatObj.from ? "<strong>You:</strong> " : "") + chatObj.lastMessage;
     chatDiv.appendChild(chatMessage);
     li.appendChild(chatDiv);
+
+    // this part is ex[perienmemtal 
+    //let chatMessageNext = document.createElement("div");
+    //chatMessageNext.innerHTML = (chatObj.from ? "<strong>You:</strong> " : "") + chatObj.prevMsg;
+    //chatDiv.appendChild(chatMessageNext);
+    //li.appendChild(chatDiv);
+    
     return li;
 }
 
@@ -81,8 +89,25 @@ function renderMessage(messageObj) {
     } else {
         messageDiv.classList.add('message-me');
     }
+    //newMessage();
     return li;
 }
+
+// function renderMessages(messages) {
+//     // get access to message area
+//     let messageArea = document.querySelector('.form-control');
+//     messageArea.innerHTML = "";
+//     state.currentChat.messages.forEach(function(message) {
+//         messageArea.appendChild(renderMessage(message));
+//     });
+// }
+
+// function newMessage() {
+//     state.currentChat = state.chats[index];
+//     currentChat.addEventListener("submit", function() {
+//         renderMessages(state.currentChat);
+//     })  
+// }
 
 function fetchChats() {
     fetch("js/messages.json")
@@ -91,13 +116,11 @@ function fetchChats() {
         })
         .then(function (data) {
             state.chats = data.chats;
-            renderChats(state.chats); //???
+            renderChats(state.chats); //??
         });
 }
 fetchChats();
 
-//function newMessage {
-    //add event listener to add a new message to chats[message]???
-//}
+
 
 console.log(state.chats);
