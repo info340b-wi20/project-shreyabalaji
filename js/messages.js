@@ -38,6 +38,7 @@ function renderOneChat(chatObj, index) {
         state.messageList = state.chats[index].messages;
         let chat = document.querySelector('#chat');
         chat.classList.remove('hidden');
+        let chats = document.querySelector('#chats');
         chats.classList.add('hidden');
         let h1 = document.querySelector('#name');
         h1.textContent = chatObj.name; 
