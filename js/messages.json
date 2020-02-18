@@ -2,7 +2,7 @@
     "chats": [
         {
             "name": "Sophie",
-	        "picture" : "/img/sophie.jpg",
+	        "picture" : "img/sophie.jpg",
             "lastMessage": "hey",
             "prevMesg": "whats up",
             "id": "123",
@@ -27,7 +27,7 @@
         },
         {
             "name": "Kailer",
-            "picture" : "/img/kailer.jpg",
+            "picture" : "img/kailer.jpg",
             "lastMessage": "going to the gym",
             "prevMesg": "whats up",
             "id": "124",    
@@ -59,7 +59,7 @@
         },
         {
             "name": "Rithik",
-            "picture" : "/img/rithik.jpg",
+            "picture" : "img/rithik.jpg",
             "lastMessage": "Let's hangout!",
             "prevMesg": "whats up",
             "id": "125",
@@ -84,7 +84,7 @@
         },
         {
             "name": "Jeanie",
-            "picture" : "/img/jeanie.jpg",
+            "picture" : "img/jeanie.jpg",
             "lastMessage": "Blind Cupid is such a cool app!",
             "prevMesg": "whats up",
             "id": "126",
