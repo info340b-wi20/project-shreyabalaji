@@ -17,6 +17,11 @@
                     "sender": "me",
                     "receiver": "them",
                     "content": "hey"
+                },
+                {
+                    "sender": "them",
+                    "receiver": "me",
+                    "content": "whats your favorite color??"
                 }
             ]
         },
@@ -29,10 +34,27 @@
             "points": 30,
             "messages": [
                 {
-                    "sender": "",
-                    "receiver": "",
+                    "sender": "them",
+                    "receiver": "me",
                     "content": "going to the gym"
+                }, 
+                {
+                    "sender": "me",
+                    "receiver": "them",
+                    "content": "ur so strong!"
+                },
+                {
+                    "sender": "them",
+                    "receiver": "me",
+                    "content": "thank u"
+                }, 
+                {
+                    "sender": "me",
+                    "receiver": "them",
+                    "content": "haha ur welcome"
                 }
+                
+
             ]
         },
         {
@@ -44,9 +66,19 @@
             "points": 10,
             "messages": [
                 {
-                    "sender": "",
-                    "receiver": "",
+                    "sender": "them",
+                    "receiver": "me",
                     "content": "Let's hangout!"
+                },
+                {
+                    "sender": "them",
+                    "receiver": "me",
+                    "content": "r u free?"
+                },
+                {
+                    "sender": "me",
+                    "receiver": "them",
+                    "content": "hows tmrw at 6pm?"
                 }
             ]
         },
@@ -59,9 +91,24 @@
             "points": 90,
             "messages": [
                 {
-                    "sender": "",
-                    "receiver": "",
+                    "sender": "them",
+                    "receiver": "me",
                     "content": "Blind Cupid is such a cool app!"
+                },
+                {
+                    "sender": "me",
+                    "receiver": "them",
+                    "content": "totally :)"
+                },
+                {
+                    "sender": "them",
+                    "receiver": "me",
+                    "content": "do u like movies"
+                },
+                {
+                    "sender": "me",
+                    "receiver": "them",
+                    "content": "yeah whats ur fav"
                 }
             ]
         }

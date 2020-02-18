@@ -5,7 +5,7 @@ let state = {
     messageIndex: 0,
     chats: [],
     messageList: null,
-    currentChat: null
+    currentChat: 0
 }
 
 
@@ -34,6 +34,11 @@ function renderOneChat(chatObj, index) {
     // create chat content
     let chatDiv = document.createElement("div");
     chatDiv.addEventListener("click", function() {
+
+        state.currentChat = index;
+        console.log(state.currentChat);
+    
+
         state.messageList = state.chats[index].messages;
         console.log(state.chats[index]);
         let chat = document.querySelector('#chat');
@@ -58,11 +63,6 @@ function renderOneChat(chatObj, index) {
     chatDiv.appendChild(chatMessage);
     li.appendChild(chatDiv);
 
-    // this part is ex[perienmemtal 
-    //let chatMessageNext = document.createElement("div");
-    //chatMessageNext.innerHTML = (chatObj.from ? "<strong>You:</strong> " : "") + chatObj.prevMsg;
-    //chatDiv.appendChild(chatMessageNext);
-    //li.appendChild(chatDiv);
     
     return li;
 }
@@ -93,21 +93,6 @@ function renderMessage(messageObj) {
     return li;
 }
 
-// function renderMessages(messages) {
-//     // get access to message area
-//     let messageArea = document.querySelector('.form-control');
-//     messageArea.innerHTML = "";
-//     state.currentChat.messages.forEach(function(message) {
-//         messageArea.appendChild(renderMessage(message));
-//     });
-// }
-
-// function newMessage() {
-//     state.currentChat = state.chats[index];
-//     currentChat.addEventListener("submit", function() {
-//         renderMessages(state.currentChat);
-//     })  
-// }
 
 function fetchChats() {
     fetch("js/messages.json")
@@ -121,6 +106,30 @@ function fetchChats() {
 }
 fetchChats();
 
+function newMessage(index) {
+    //add event listener to add a new message to chats[message]???
+    let newMessageDiv = document.querySelector('button');
+    newMessageDiv.addEventListener('click', function(event) {
+        event.preventDefault();
+        let newOL = document.querySelector('ol');
+        //newOL.empty();
+        newOL.innerHTML = "";
+
+        let inputText = document.querySelector('input').value;
+        state.chats[state.currentChat].messages.push({"sender":"me", "reciever": "them", "content": inputText});
+        console.log(inputText);
+        console.log(state.chats[state.currentChat].messages[state.chats[state.currentChat].messages.length-1]);
+        renderMessages(state.chats[state.currentChat].messages);
+        let textBox = document.querySelector('input');
+        textBox.value= '';
+
+
+
+        console.log(state.currentChat);
+    });
+}
+//newMessage(state.messageIndex);
+newMessage(state.currentChat);
 
 
 console.log(state.chats);
