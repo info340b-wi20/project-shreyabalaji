@@ -34,13 +34,8 @@ function renderOneChat(chatObj, index) {
     // create chat content
     let chatDiv = document.createElement("div");
     chatDiv.addEventListener("click", function() {
-
         state.currentChat = index;
-        console.log(state.currentChat);
-    
-
         state.messageList = state.chats[index].messages;
-        console.log(state.chats[index]);
         let chat = document.querySelector('#chat');
         chat.classList.remove('hidden');
         chats.classList.add('hidden');
@@ -62,8 +57,6 @@ function renderOneChat(chatObj, index) {
     chatMessage.innerHTML = (chatObj.from ? "<strong>You:</strong> " : "") + chatObj.lastMessage;
     chatDiv.appendChild(chatMessage);
     li.appendChild(chatDiv);
-
-    
     return li;
 }
 
@@ -106,7 +99,7 @@ function fetchChats() {
 }
 fetchChats();
 
-function newMessage(index) {
+function newMessage() {
     //add event listener to add a new message to chats[message]???
     let newMessageDiv = document.querySelector('button');
     newMessageDiv.addEventListener('click', function(event) {
@@ -122,14 +115,6 @@ function newMessage(index) {
         renderMessages(state.chats[state.currentChat].messages);
         let textBox = document.querySelector('input');
         textBox.value= '';
-
-
-
-        console.log(state.currentChat);
     });
 }
-//newMessage(state.messageIndex);
-newMessage(state.currentChat);
-
-
-console.log(state.chats);
+newMessage();
