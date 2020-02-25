@@ -1,0 +1,243 @@
+.border_color {
+    background-color: #F7CAC9; 
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 20px;
+ }
+ 
+ body {
+     font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .blindfoldcup {
+     border-radius: 8px;
+     max-width: 284px;
+     height: 273px;
+ }
+ 
+ .container {
+     padding-top: 20px;
+ }
+ 
+ .card-text {
+     font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .card-title {
+     font-family: 'Courier New', Courier, monospace;
+ 
+ }
+ 
+ footer {
+     text-align: center;
+     font-family: 'Courier New', Courier, monospace;
+     position: sticky;
+ }
+ 
+ li {
+     display: inline;
+     margin-right: 1rem;
+ 
+ }
+ 
+ ul {
+     display: flex;
+     margin: 0;
+     padding: 0;
+     justify-content: space-evenly;
+     flex-direction: row;
+     padding-bottom: 10px;
+ 
+ }
+ 
+ a:hover {
+     color:white;
+     border-bottom-style: solid;
+     border-bottom-color: white;
+     border-bottom-width: .1rem;
+ }
+ 
+ .messaging-input {
+     display: flex;
+     flex-direction: row;
+     justify-content: first baseline;
+ }
+ .text-bar {
+     font-family: 'Courier New', Courier, monospace;
+     padding: 10px;
+     flex-grow: 1;
+ }
+ 
+ .send-button {
+     margin-top: 40px;
+     margin-bottom: 10px;
+     size: 3px;
+ }
+ 
+ nav {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     width: 100%;
+     background-color: lightcoral;
+     padding: .75rem;
+     height: 40px;
+ }
+ 
+ .message-them {
+     text-align: left;
+ }
+ 
+ .message-me {
+     text-align: right;
+ }
+ 
+ 
+ /*source code:https://www.w3schools.com/howto/howto_css_chat.asp*/
+ /* Chat containers */
+ .chat {
+     border: 2px solid #dedede;
+     background-color: #f1f1f1;
+     border-radius: 5px;
+     padding: 10px;
+     margin: 10px 0;
+ }
+   
+ /* Darker chat container */
+ .you {
+     border-color: black;
+     background-color: #ddd;
+ }
+   
+ /* Clear floats */
+ .chat::after {
+     content: "";
+     clear: both;
+     display: table;
+ }
+   
+ /* Style images */
+ .chat img {
+     float: left;
+     max-width: 60px;
+     width: 100%;
+     margin-right: 20px;
+     border-radius: 50%;
+     padding: 0;
+     margin-top: 3%;
+     margin-left: 10px;
+ }
+   
+ /* Style the right image */
+ .chat img.right {
+     float: right;
+     margin-left: 20px;
+     margin-right:0;
+ }
+   
+ /* Style time text */
+ .time-right {
+     float: right;
+     color: #aaa;
+ }
+   
+ /* Style time text */
+ .time-left {
+     float: left;
+     color: #999;
+ }
+ 
+ /*style like*/
+ .heart {
+     margin-left: 5px;
+ }
+ 
+ .pb-3 {
+     height: 130px;
+     width: 120px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ .container_profile {
+     text-align: center;
+ }
+ 
+ .propicture {
+     height:200px;
+     width: 300px;
+ }
+ 
+ .bio_info {
+     padding: 10px;
+     font-family: 'Courier New', Courier, monospace;
+     
+ }
+ 
+ .bio_info h2 {
+     text-align: center;
+     font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .preferences {
+     padding: 10px;
+     font-family: 'Courier New', Courier, monospace;
+ }
+ 
+ .preferences h2 {
+     text-align: center;
+ 
+ }
+ 
+ .location {
+     padding: 10px;
+ }
+ 
+ .hidden {
+     display: none;
+ }
+ 
+ 
+ @media (min-width: 598px) {
+     .pb-3 {
+         height: 150px;
+         width: 140px;
+     }
+     .propicture {
+         height:250px;
+         widows: 250px;
+     }
+ 
+ }
+ 
+ @media (min-width: 768px) {
+     .row { 
+         display: flex;
+         flex-wrap: wrap; 
+     }
+ }
+ 
+ @media (min-width: 992px) {
+     .blindfoldcup {
+         border-radius: 8px;
+         max-width: 384px;
+         height: 373px;
+     }
+     nav a {
+         font-size: 1.3rem;
+     }
+ 
+ }
+ 
+ @media (min-width: 1200px) {
+     .propicture {
+         height:300px;
+         widows: 400px;
+     }
+     main {
+         background-color:#fff7f8;
+     }
+ }
+ 
+ 
+ 
