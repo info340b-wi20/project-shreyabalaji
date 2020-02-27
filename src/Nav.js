@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import 'font-awesome/css/font-awesome.min.css';
 
 export default class Nav extends Component { //export allows other things to use this class.
     render() {
