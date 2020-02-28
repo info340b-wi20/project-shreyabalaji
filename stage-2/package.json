@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "jest-style-matchers": "^0.1.2"
   },
   "eslintConfig": {
@@ -35,5 +36,6 @@
         "error"
       ]
     }
-  }
+  },
+  "dependencies": {}
 }

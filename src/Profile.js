@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 export default class Profile extends Component { //export allows other things to use this class.
     render() {
         return (
+            <body>
                 <header class="border_color">
                     <div class="container">
                         <h1>Blind Cupid</h1>
@@ -13,7 +14,7 @@ export default class Profile extends Component { //export allows other things to
                 <section class="profile_image">
                     {/*code reference https://www.w3schools.com/howto/howto_css_image_overlay_icon.asp-->*/}
                     <div class="container_profile">
-                        <img class="propicture" src="img/user_pic.jpg" alt="profile picture"></img>
+                        <img class="propicture" src="img/user_pic.jpg" alt="profile picture"/>
                     </div>
                 </section>
                 <section class="bio_info">
@@ -68,6 +69,7 @@ export default class Profile extends Component { //export allows other things to
 
                     <input type="submit" value="Submit" aria-label="submit"></input> 
                 </section>
+            </body>
         );
     }
 }
