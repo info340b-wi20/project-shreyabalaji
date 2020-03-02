@@ -169,5 +169,6 @@ export default class Messages extends Component { //export allows other things t
                 renderedMessages}
             </ol>
         );
-    }
+	}
+	
 }
