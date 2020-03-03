@@ -11,7 +11,7 @@ export default class Nav extends Component { //export allows other things to use
             // </head>
             <nav>
                 <ul>
-                    <li><a href="index.js"><FontAwesome className="fas fa-home" aria-label="home feed"/></a></li>
+                    <li><a href="index"><FontAwesome className="fas fa-home" aria-label="home feed"/></a></li>
                     <li><a href="Likes"><FontAwesome className="far fa-heart" aria-label="Your likes"/></a></li>
                     <li><a href="Messages"><FontAwesome className="fas fa-comments" aria-label="messages"/></a></li>
                     <li><a href="Profile"><FontAwesome className="fas fa-user" aria-label="profile"/></a></li>
