@@ -25,8 +25,6 @@ export default class App extends Component { //export allows other things to use
             <Route path="/profile" component={Profile} />
             <Redirect to="/" />
           </Switch>
-
-          {/* <Messages></Messages> */}
           <Nav></Nav>
           <Footer></Footer>
         </div>
