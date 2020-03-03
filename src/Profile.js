@@ -31,14 +31,12 @@ export default class Profile extends Component { //export allows other things to
                             <label for="answer">What are you looking for on this site, a long term relationship or fling?:</label>
                             <textarea class="form-control" id="answer" name="answer"></textarea>
                         </div>
-                        <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
                     </form>
                     <form>
                         <div>
                             <label for="answer">Dog or Cat? Beach or mountains? Rain or shine?:</label>
                             <textarea class="form-control" id="answer" name="answer"></textarea>
                         </div>
-                        <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
                     </form>
                 </section>
                 <section class="preferences">
