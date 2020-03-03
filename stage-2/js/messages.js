@@ -111,8 +111,8 @@ function newMessage() {
 
         let inputText = document.querySelector('input').value;
         state.chats[state.currentChat].messages.push({"sender":"me", "reciever": "them", "content": inputText});
-        console.log(inputText);
-        console.log(state.chats[state.currentChat].messages[state.chats[state.currentChat].messages.length-1]);
+        // console.log(inputText);
+        // console.log(state.chats[state.currentChat].messages[state.chats[state.currentChat].messages.length-1]);
         renderMessages(state.chats[state.currentChat].messages);
         let textBox = document.querySelector('input');
         textBox.value= '';

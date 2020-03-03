@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Nav from './Nav';
 import Messages from './messages';
 import Likes from './Likes'
+import NewMessage from './NewMessage.js';
 
 export default class App extends Component { //export allows other things to use this class.
     render() {
@@ -13,6 +14,7 @@ export default class App extends Component { //export allows other things to use
         <div className="container">
             <Header></Header>
             <Messages></Messages>
+            {/* <NewMessage></NewMessage> */}
             <Nav></Nav>
             <Footer></Footer>
         </div>

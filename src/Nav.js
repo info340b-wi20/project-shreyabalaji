@@ -5,9 +5,7 @@ import FontAwesome from 'react-fontawesome'
 
 export default class Nav extends Component { //export allows other things to use this class.
     render() {
-        return (
-            
-             
+        return (           
             <nav>
                 <ul>
                     <li><a href="index.html"><FontAwesome className="fas fa-home" aria-label="home feed"/></a></li>
