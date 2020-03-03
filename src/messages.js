@@ -29,10 +29,10 @@ export default class Messages extends Component { //export allows other things t
     handleChange = (event) => {
         //get the value that the <input> now has
         let newValue = event.target.value
-  
+
         //store that new value in the state, rendering the Component
-        this.setState({messageInput: newValue});
-     }
+        this.setState({ messageInput: newValue });
+    }
 
     clickedChat = (index) => {
         console.log(index)
@@ -47,9 +47,13 @@ export default class Messages extends Component { //export allows other things t
 
     addMessage = () => {
         let messageInput = this.state.messageInput;
-        let messageObject = {"sender":"me", "reciever": "them", "content": messageInput};
+        let messageObject = { "sender": "me", "reciever": "them", "content": messageInput };
         let messageIndex = this.state.messageIndex;
-
+        this.state.chats[messageIndex].messages.push(messageObject);
+        this.setState({
+            chats: this.state.chats,
+            messageInput: ''
+        })
     }
 
     render() {
@@ -72,34 +76,39 @@ export default class Messages extends Component { //export allows other things t
             return <li class="chat list-group-item"><div class={mess.sender === "me" ? "message-me" : "message-them"}><p>{mess.content}</p></div></li>
         })
 
-        let messageComponent = (
-            <div>
-                {this.state.showMessages && <button onClick={() => this.setState({ showMessages: false })}>Back</button>}
-                {renderedMessages}
-                <form>
-                    <label for="enter-text">Message:</label>
-                    <input type="text" class="form-control" id="enter-text" name="enter-text" onChange={this.handleChange} value={this.state.messageInput}></input>
-                </form>
-                <div style={{ opacity: (this.state.points / 100), width: "50px", height: "50px", backgroundColor: "red" }}>
-
+        let messageComponent;
+        if (this.state.chats.length > 0) {
+            messageComponent = (
+                <div>
+                                    
+                    {this.state.showMessages && <button onClick={() => this.setState({ showMessages: false })}>Back</button>}
+                    <div style={{ opacity: (this.state.points / 100), width: "100px", height: "100px", textAlign: "center"}}>
+                        <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
+                    </div> 
+                    {renderedMessages}
+                    <form>
+                        <label for="enter-text">Message:</label>
+                        <input type="text" class="form-control" id="enter-text" name="enter-text" onChange={this.handleChange} value={this.state.messageInput}></input>
+                    </form>
+                    <Button className="send-button" variant="primary" size="sm" onClick={(event) => {
+                        event.preventDefault();
+                        this.addMessage();
+                        this.setState({
+                            points: this.state.points + 10
+                        })
+                    }
+                    }>send</Button>
                 </div>
-                <Button className="send-button" variant="primary" size="sm" onClick={(event) => {
-                    event.preventDefault();
-                    this.addMessage();
-                    this.setState({
-                        points: this.state.points + 10
-                    })
-                }
-                }>send</Button>
-            </div>
-        )
+            )
+        }
         return (
             <ol className="msg">
                 {!this.state.showMessages ?
-                renderedChats
-                :
-                messageComponent}
+                    renderedChats
+                    :
+                    messageComponent}
             </ol>
-        );     
+        );
     }
+
 }

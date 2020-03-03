@@ -31,25 +31,31 @@ export default class Profile extends Component { //export allows other things to
                             <label for="answer">What are you looking for on this site, a long term relationship or fling?:</label>
                             <textarea class="form-control" id="answer" name="answer"></textarea>
                         </div>
-                        <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
                     </form>
                     <form>
                         <div>
                             <label for="answer">Dog or Cat? Beach or mountains? Rain or shine?:</label>
                             <textarea class="form-control" id="answer" name="answer"></textarea>
                         </div>
-                        <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
                     </form>
                 </section>
                 <section class="preferences">
                     <h2>Preferences</h2>
                     <form>
-                        <div>
-                            <input type="radio" name="gender" value="male" checked> Male</input>
-                            <input type="radio" name="gender" value="female"> Female</input>
-                            <input type="radio" name="gender" value="other"> Non-Gender Conforming</input>
-                            <input type="radio" name="gender" value="other"> Anyone &amp; Everyone!</input>
-                        </div>
+                            <div>
+                                <label for="male"> Male </label>
+                                <input type="radio" name="gender" value="male" checked></input>
+                            </div>
+
+                            <div>
+                                <label for="female"> Female </label>
+                                <input type="radio" name="gender" value="female" checked></input>
+                            </div>
+
+                            <div>
+                                <label for="Non-Gender Conforming"> Non-Gender-Conforming </label>  
+                                <input type="radio" name="gender" value="other" checked></input>
+                            </div>
                     </form>
                     
                     <form class="location" action="/action_page.php">
@@ -62,8 +68,13 @@ export default class Profile extends Component { //export allows other things to
                     <form>
                         <div>
                             <p>Would you prefer someone in...</p>
-                            <input type="radio" name="gender" value="male" checked> School</input>
-                            <input type="radio" name="gender" value="other"> Work</input>
+                            <div>
+                                <label for="School"> School </label>
+                                <input type="radio" name="gender" value="male" checked></input>
+                            </div>
+
+                            <label for=" Work "> Work </label>
+                            <input type="radio" name="gender" value="other"></input>
                         </div>
                     </form>
 
