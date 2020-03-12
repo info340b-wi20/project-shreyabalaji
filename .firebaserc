@@ -1,1 +1,5 @@
-{}
+{
+  "projects": {
+    "test": "info340project-blind"
+  }
+}

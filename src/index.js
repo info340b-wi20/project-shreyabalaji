@@ -2,8 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from "react-router-dom";
+
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
+
+
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+	apiKey: "AIzaSyAurYgiqqhxJ1uW-X5XHYYHGBr6vZPDGdU",
+	authDomain: "info340Project-blind.firebaseapp.com",
+	databaseURL: "https://info340Project-blind.firebaseio.com",
+	projectId: "info340Project-blind",
+	storageBucket: "info340Project-blind.appspot.com",
+	messagingSenderId: "932938034155",
+	appId: "1:641925391525:web:fd2c63c2e504b0b52ed94c"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
 ReactDOM.render(<BrowserRouter> <App /> </BrowserRouter> , document.getElementById('root'));
 
