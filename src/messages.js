@@ -62,8 +62,9 @@ export default class Messages extends Component { //export allows other things t
             return (
                 <li class="chat list-group-item" onClick={() => this.clickedChat(index)}>
                     <div>
-                        <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
-                    </div>
+                        {/* <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img> */}
+                    <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
+                    </div> 
                     <div class="chat-content chat">
                         <h4>{chat.name}</h4>
                         <div>{chat.lastMessage}</div>
