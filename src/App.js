@@ -14,27 +14,27 @@ import SignUpForm from './components/signup/signupform';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-export default class App extends Component { //export allows other things to use this class.
+// export default class App extends Component { //export allows other things to use this class.
     // render() {
     //   return (
-    //     <div className="container">
+        // <div className="container">
             
-    //       <Header></Header>
+        //   <Header></Header>
 
-    //       <Switch>
-    //         <Route exact path="/" component={HomeProfiles} />
-    //         <Route path="/messages" component={Messages} />
-    //         <Route path="/likes" component={Likes} />
-    //         <Route path="/profile" component={Profile} />
-    //         <Redirect to="/" />
-    //       </Switch>
-    //       <Nav></Nav>
-    //       <Footer></Footer>
-    //     </div>
+        //   <Switch>
+        //     <Route exact path="/" component={HomeProfiles} />
+        //     <Route path="/messages" component={Messages} />
+        //     <Route path="/likes" component={Likes} />
+        //     <Route path="/profile" component={Profile} />
+        //     <Redirect to="/" />
+        //   </Switch>
+        //   <Nav></Nav>
+        //   <Footer></Footer>
+        // </div>
     //   );
     // }
   
-// class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -115,12 +115,26 @@ export default class App extends Component { //export allows other things to use
     else { //if logged in, show welcome message
       content = (
         <div>
-            {/* log out button is child element */}
-            {this.state.user &&
-              <button className="btn btn-warning" onClick={this.handleSignOut}>
-                Log Out {this.state.user.displayName}
-              </button>
-            }
+          {/* log out button is child element */}
+          <div className="container">
+            <Header></Header>
+            <Switch>
+              <Route exact path="/" component={HomeProfiles} />
+              <Route path="/messages" component={Messages} />
+              <Route path="/likes" component={Likes} />
+              <Route path="/profile" component={Profile} />
+              <Redirect to="/" />
+            </Switch>
+            <Nav></Nav>
+            <Footer></Footer>
+          </div>
+
+
+          {this.state.user && (
+            <button className="btn btn-warning" onClick={this.handleSignOut}>
+              Log Out {this.state.user.displayName}
+            </button>
+          )}
         </div>
       );
     }

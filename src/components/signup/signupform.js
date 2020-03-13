@@ -27,8 +27,7 @@ class SignUpForm extends Component {
 	//handle signUp button
 	handleSignUp = (event) => {
 		event.preventDefault(); //don't submit
-		let avatar = this.state.avatar || 'img/no-user-pic.png'; //default to local pic
-		this.props.signUpCallback(this.state.email, this.state.password, this.state.handle, avatar);
+		this.props.signUpCallback(this.state.email, this.state.password);
 	}
 
 	//handle signIn button
@@ -58,28 +57,6 @@ class SignUpForm extends Component {
 						id="password"
 						type="password"
 						name="password"
-						onChange={this.handleChange}
-					/>
-				</div>
-
-				{/* handle */}
-				<div className="form-group">
-					<label htmlFor="handle">Handle</label>
-					<input className="form-control"
-						id="handle"
-						name="handle"
-						onChange={this.handleChange}
-					/>
-				</div>
-
-				{/* avatar */}
-				<div className="form-group">
-					<img className="avatar" src={this.state.avatar || 'img/no-user-pic.png'} alt="avatar preview" />
-					<label htmlFor="avatar">Avatar Image URL</label>
-					<input className="form-control"
-						id="avatar"
-						name="avatar"
-						placeholder="http://www.example.com/my-picture.jpg"
 						onChange={this.handleChange}
 					/>
 				</div>
