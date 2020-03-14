@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import firebase from 'firebase';
 
 export default class Messages extends Component { //export allows other things to use this class.
     state = {
@@ -59,12 +60,34 @@ export default class Messages extends Component { //export allows other things t
     render() {
         console.log(this.state.chats);
         let renderedChats = this.state.chats.map((chat, index) => {
+            // let listComponent;
+            // if (this.state.chats.length > 0) {
+            //     listComponent = (
+            //         <div style={{ opacity: (this.state.length / 100) }}>
+
+            //             <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+            //         </div>
+            //     )
+            // }
             return (
                 <li class="chat list-group-item" onClick={() => this.clickedChat(index)}>
-                    <div>
+                    {/* let listComponent;
+                        if (this.state.chats.length > 0) {
+                            listComponent = (
+                    <div style={{ opacity: (this.state.length / 100) }}>
+
+
+                                <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+                            </div> 
+                            )
+                        } */}
                         {/* <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img> */}
-                    <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
-                    </div> 
+                    {/* <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img> */}
+                    <div style={{ opacity: (this.state.chats.length / 100) }}>
+                        <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+                    </div>
+
+
                     <div class="chat-content chat">
                         <h4>{chat.name}</h4>
                         <div>{chat.lastMessage}</div>
@@ -81,9 +104,8 @@ export default class Messages extends Component { //export allows other things t
         if (this.state.chats.length > 0) {
             messageComponent = (
                 <div>
-                                    
                     {this.state.showMessages && <button onClick={() => this.setState({ showMessages: false })}>Back</button>}
-                    <div style={{ opacity: (this.state.points / 100), width: "100px", height: "100px", textAlign: "center"}}>
+                    <div style={{ opacity: (this.state.chats.length * 10 / 100), width: "100px", height: "100px", textAlign: "center"}}>
                         <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
                     </div> 
                     {renderedMessages}
@@ -95,7 +117,11 @@ export default class Messages extends Component { //export allows other things t
                         event.preventDefault();
                         this.addMessage();
                         this.setState({
-                            points: this.state.points + 10
+                            // points: this.state.points + 10
+                            // chats: firebase.database.addMessage(this.state.messageInput)
+                                messageInput: this.state.messageInput,
+                                userId: this.props.currentUser.uid,
+                                time: firebase.database.ServerValue.TIMESTAMP,
                         })
                     }
                     }>send</Button>

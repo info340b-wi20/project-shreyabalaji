@@ -47,7 +47,9 @@ class App extends Component {
     this.authUnRegFunc = firebase.auth().onAuthStateChanged((firebaseUser) => {
       if (firebaseUser) { //if exists, then we logged in
         console.log("Logged in as", firebaseUser.email);
+        console.log("uid", firebase.auth().currentUser.uid);
         this.setState({ user: firebaseUser, loading: false });
+        
       } else {
         console.log("Logged out");
         this.setState({ user: null, loading: false });
