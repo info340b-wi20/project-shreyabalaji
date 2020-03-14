@@ -10,9 +10,9 @@ export default class Likes extends Component { //export allows other things to u
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="row">
-                                    <img class="pb-3" src="img/sophie.jpg" alt="profile picture" />
+                                    <img class="pb-3" src="img/bobbi.jpg" alt="profile picture" />
                                 <div class="col-sm">
-                                    <h2 class="card-title">Sophie, 29</h2>
+                                    <h2 class="card-title">Bobbi, 29</h2>
                                     <p class="card-text">Dog or Cat?</p>
                                     <p>DOGS!</p>
                                     <p>Beach or mountains?</p> 
@@ -31,9 +31,9 @@ export default class Likes extends Component { //export allows other things to u
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="row">
-                                <img class="pb-3" src="img/kailer.jpg" alt="profile picture" />
+                                <img class="pb-3" src="img/gavin.jpg" alt="profile picture" />
                                 <div class="col-sm">
-                                <h2 class="card-title">Kailer, 22</h2>
+                                <h2 class="card-title">Gavin, 32</h2>
                                 <p class="card-text"><em>Dog or Cat?</em></p> 
                                     <p>I have 3 kittens</p>
                                     <p><em>Beach or mountains?</em></p> 
@@ -51,9 +51,9 @@ export default class Likes extends Component { //export allows other things to u
                     <div class="card mb-4">
                         <div class="card-body">
                         <div class="row">
-                            <img class="pb-3" src="img/rithik.jpg" alt="profile picture" />
+                            <img class="pb-3" src="img/sam.jpg" alt="profile picture" />
                             <div class="col-sm">
-                            <h2 class="card-title">Rithik, 25</h2>
+                            <h2 class="card-title">Sam, 25</h2>
                             <p class="card-text"><em>Dog or Cat?</em></p>
                             <p> Allergic to both..oops!</p>
                             <p><em>Beach or mountains?</em></p>
@@ -70,9 +70,9 @@ export default class Likes extends Component { //export allows other things to u
                     <div class="card mb-4">
                         <div class="card-body">
                         <div class="row">
-                            <img class="pb-3" src="img/jeanie.jpg" alt="profile picture" />
+                            <img class="pb-3" src="img/trina.jpg" alt="profile picture" />
                             <div class="col-sm">
-                            <h2 class="card-title">Jeanie, 31</h2>
+                            <h2 class="card-title">Trina, 31</h2>
                             <p class="card-text"><em>Dog or Cat?</em></p>
                             <p>Cats :)</p>
                             <p><em>Beach or mountains?</em></p>
