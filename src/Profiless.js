@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import 'firebase/storage';
+import 'firebase/database';
 
 export default class Profiles extends Component { //export allows other things to use this class.
     render() {

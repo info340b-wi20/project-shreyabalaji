@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import firebase from 'firebase/app';
+import 'firebase/database';
+
+const firebaseConfig = {
+	apiKey: "AIzaSyAurYgiqqhxJ1uW-X5XHYYHGBr6vZPDGdU",
+	authDomain: "info340Project-blind.firebaseapp.com",
+	databaseURL: "https://info340Project-blind.firebaseio.com",
+	projectId: "info340Project-blind",
+	storageBucket: "info340Project-blind.appspot.com",
+	messagingSenderId: "932938034155",
+	appId: "1:641925391525:web:fd2c63c2e504b0b52ed94c"
+};
 
 export default class Messages extends Component { //export allows other things to use this class.
     state = {

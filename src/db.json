@@ -1,0 +1,28 @@
+{
+    "users": {
+        "uid1": {
+            "likes": [
+                "uid2"
+            ],
+            "messages": [
+                "uid2"
+            ],
+            "profile": {
+                "gender": "male",
+                "location": " seattle"
+            }
+        },
+        "uid2": {
+            "likes": {},
+            "profile": {
+                "gender": "female",
+                "location": " seattle"
+            }
+        }
+    },
+    "messages": {
+        "uid1_uid2": {
+
+        }
+    } 
+}
