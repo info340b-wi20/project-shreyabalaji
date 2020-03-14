@@ -75,29 +75,18 @@ export default class Profile extends Component { //export allows other things to
                     </form>
                 </section>
                 <section class="preferences">
-                    <h2>Preferences</h2>
+                    <h2>Gender</h2>
                     <form>
-                            <div>
-                                <label for="male"> Male </label>
-                                <input type="radio" name="gender" value="male" checked></input>
-                            </div>
-
-                            <div>
-                                <label for="female"> Female </label>
-                                <input type="radio" name="gender" value="female" checked></input>
-                            </div>
-
-                            <div>
-                                <label for="Non-Gender Conforming"> Non-Gender-Conforming </label>  
-                                <input type="radio" name="gender" value="other" checked></input>
-                            </div>
+                        <div>
+                            <textarea class="form-control" id="answer" vlaue={this.state.gender} name="gender" onChange={this.onChange}></textarea>
+                        </div>
                     </form>
                     
                     <form class="location">
                         Location:
-                        <input type="text" name="location"></input>
+                        <input type="text" value={this.state.location} name="location"></input>
                         How many miles radius:
-                        <input type="text" name="radius"></input>
+                        <input type="text" name="radius" value={this.state.radius}></input>
                     </form>
 
                     <form>
@@ -105,15 +94,15 @@ export default class Profile extends Component { //export allows other things to
                             <p>Would you prefer someone in...</p>
                             <div>
                                 <label for="School"> School </label>
-                                <input type="radio" name="gender" value="male" checked></input>
+                                <input type="radio" name="school" checked></input>
                             </div>
 
                             <label for=" Work "> Work </label>
-                            <input type="radio" name="gender" value="other"></input>
+                            <input type="radio" name="work"></input>
                         </div>
                     </form>
 
-                    <input type="submit" value="Submit" aria-label="submit" onClick={this.updateProfile}></input> 
+                    <input className="btn btn-info" type="submit" value="Update" aria-label="submit" onClick={this.updateProfile}></input> 
                 </section>
             </body>
         );
