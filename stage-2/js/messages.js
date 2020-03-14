@@ -10,9 +10,8 @@ let state = {
 
 
 
-//chat demo
 function renderChats(chats) {
-    let chatArea = document.querySelector("#chats"); //is this the right class? should we have it in a list?
+    let chatArea = document.querySelector("#chats"); 
     chats.forEach(function (chat, index) {
         chatArea.appendChild(renderOneChat(chat, index));
     });
@@ -83,7 +82,6 @@ function renderMessage(messageObj) {
     } else {
         messageDiv.classList.add('message-me');
     }
-    //newMessage();
     return li;
 }
 
@@ -95,24 +93,20 @@ function fetchChats() {
         })
         .then(function (data) {
             state.chats = data.chats;
-            renderChats(state.chats); //??
+            renderChats(state.chats); 
         });
 }
 fetchChats();
 
 function newMessage() {
-    //add event listener to add a new message to chats[message]???
     let newMessageDiv = document.querySelector('button');
     newMessageDiv.addEventListener('click', function(event) {
         event.preventDefault();
         let newOL = document.querySelector('ol');
-        //newOL.empty();
         newOL.innerHTML = "";
 
         let inputText = document.querySelector('input').value;
         state.chats[state.currentChat].messages.push({"sender":"me", "reciever": "them", "content": inputText});
-        // console.log(inputText);
-        // console.log(state.chats[state.currentChat].messages[state.chats[state.currentChat].messages.length-1]);
         renderMessages(state.chats[state.currentChat].messages);
         let textBox = document.querySelector('input');
         textBox.value= '';

@@ -74,7 +74,7 @@ class App extends Component {
       })
       .then(() => {
         this.setState((prevState) => {
-          let updatedUser = { ...prevState.user, displayName: prevState.user.displayName, photoURL: prevState.user.photoURL };
+          let updatedUser = { ...prevState.user };
           return { user: updatedUser }; //updating the state
         });
       })
@@ -104,7 +104,7 @@ class App extends Component {
     if (!this.state.user) { //if logged out, show signup form
       content = (
         <div className="container">
-          <h1>Sign Up</h1>
+          <h1>Sign In</h1>
           <SignUpForm
             signUpCallback={this.handleSignUp}
             signInCallback={this.handleSignIn}
@@ -117,6 +117,11 @@ class App extends Component {
         <div>
           {/* log out button is child element */}
           <div className="container">
+            {this.state.user && (
+              <button className="btn btn-info logout pull-right" onClick={this.handleSignOut}>
+                Log Out
+              </button>
+            )}
             <Header></Header>
             <Switch>
               <Route exact path="/" component={HomeProfiles} />
@@ -130,11 +135,7 @@ class App extends Component {
           </div>
 
 
-          {this.state.user && (
-            <button className="btn btn-warning" onClick={this.handleSignOut}>
-              Log Out {this.state.user.displayName}
-            </button>
-          )}
+          
         </div>
       );
     }
