@@ -79,7 +79,7 @@ export default class Profiles extends Component { //export allows other things t
                             <p>Neither! I love forests.</p>
                             <p><em>Perfect date?</em></p>
                             <p>Dates make me nervous so anything as chilled out as possible.</p>
-                            <a href="#" class="btn btn-info">Message</a>
+                            <a href="#" class="btn btn-info">Message</a> {/*do on onClick function*/}
                             </div>
                         </div>
                         </div>
