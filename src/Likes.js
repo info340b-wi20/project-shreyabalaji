@@ -21,7 +21,7 @@ export default class Likes extends Component { //export allows other things to u
                                     <p>Doing something active, 
                                     like a hike :)</p>
                                     <a href="#" class="btn btn-info">Message</a>
-                                    <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Changed My Mind</a>
+                                    <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
                                 </div>
                             </div>
                         </div>
@@ -43,6 +43,7 @@ export default class Likes extends Component { //export allows other things to u
                                     <p>Doing anything that will</p>
                                     <p>let us really get to know eachother!</p>
                                 <a href="#" class="btn btn-info">Message</a>
+                                <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
                             </div>
                         </div>
                     </div>
@@ -61,6 +62,7 @@ export default class Likes extends Component { //export allows other things to u
                             <p>Beaches for sure.</p>
                             <p><em>Perfect date?</em> Going to a local indie concert and grabbing drinks after!</p>
                             <a href="#" class="btn btn-info">Message</a>
+                            <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
                             </div>
                         </div>
                         </div>
@@ -81,6 +83,7 @@ export default class Likes extends Component { //export allows other things to u
                             <p><em>Perfect date?</em></p>
                             <p>Dates make me nervous so anything as chilled out as possible.</p>
                             <a href="#" class="btn btn-info">Message</a>
+                            <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
                             </div>
                         </div>
                         </div>
