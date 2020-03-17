@@ -29,6 +29,7 @@ export default class HomeProfiles extends Component {
     let profileKeys = Object.keys(this.state.users)
     let profileArray = profileKeys.map((key) => {
       let profileObj = this.state.users[key].profile;
+      console.log(profileObj);
       profileObj.id = key;
       return profileObj;
     })

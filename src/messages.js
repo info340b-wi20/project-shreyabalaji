@@ -61,10 +61,11 @@ export default class Messages extends Component { //export allows other things t
         console.log(index)
         let chats = this.state.chats;
         let messages = chats[index];
+        let points = this.state.points;
         this.setState({
             showMessages: true,
             messageList: messages.messages,
-            messageIndex: index
+            messageIndex: index,
         })
     }
 
@@ -90,7 +91,7 @@ export default class Messages extends Component { //export allows other things t
               <Link to={"messages/" + combined}>
                 <li class="chat list-group-item">
                   <div>
-                    <div style={{ opacity: this.state.messages.length / 100 }}>
+                    <div style={{ opacity: this.state.messages.length / 10 }}>
                       <img
                         style={{
                           width: "50%",

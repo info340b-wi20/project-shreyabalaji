@@ -187,7 +187,7 @@ export default class Profile extends Component { //export allows other things to
                     className="input"
                     type="text"
                     value={this.state.picture}
-                    name="age"
+                    name="picture"
                     onChange={this.onChange}
                   ></input>
                 </div>
