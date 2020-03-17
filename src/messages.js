@@ -77,7 +77,7 @@ export default class Messages extends Component { //export allows other things t
                 onClick={() => this.clickedChat(index)}>
                 <div>
                   <div style={{ opacity: this.state.chats.length / 100 }}>
-                    <img style={{width:50%, marginLeft: auto, marginRight: auto}}class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+                    <img style={{width: "50%"}}class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
                   </div>
                 </div>
                 <div class="chat-content chat">
@@ -98,7 +98,7 @@ export default class Messages extends Component { //export allows other things t
                 <div>
                                     
                     {this.state.showMessages && <button onClick={() => this.setState({ showMessages: false })}>Back</button>}
-                    <div style={{ opacity: (this.state.points / 100), width: "100px", height: "100px", textAlign: "center"}}>
+                    <div style={{ opacity: (this.state.points / 100), width: "100px", height: "100px", marginLeft: "auto", marginRight: "auto", textAlign: "center"}}>
                         <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
                     </div> 
                     {renderedMessages}
