@@ -72,17 +72,20 @@ export default class Messages extends Component { //export allows other things t
         console.log(this.state.chats);
         let renderedChats = this.state.chats.map((chat, index) => {
             return (
-                <li class="chat list-group-item" onClick={() => this.clickedChat(index)}>
-                    <div>
-                        {/* <img class="chat-pic chat img" src={chat.picture} alt={chat.name}></img> */}
-                    <img className="center" src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%", marginLeft: auto, marginRight: auto}} alt={this.state.chats[this.state.messageIndex].name}></img>
-                    </div> 
-                    <div class="chat-content chat">
-                        <h4>{chat.name}</h4>
-                        <div>{chat.lastMessage}</div>
-                    </div>
-                </li>
-            )
+              <li
+                class="chat list-group-item"
+                onClick={() => this.clickedChat(index)}>
+                <div>
+                  <div style={{ opacity: this.state.chats.length / 100 }}>
+                    <img style={{width:50%, marginLeft: auto, marginRight: auto}}class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+                  </div>
+                </div>
+                <div class="chat-content chat">
+                  <h4>{chat.name}</h4>
+                  <div>{chat.lastMessage}</div>
+                </div>
+              </li>
+            );
         })
 
         let renderedMessages = (this.state.messageList || []).map((mess) => {
