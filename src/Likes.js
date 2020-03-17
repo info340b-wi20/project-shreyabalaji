@@ -4,12 +4,12 @@ import firebase from "firebase/app";
 
 export default class Likes extends Component {
                  //export allows other things to use this class.
-                state = {users: []};
+                state = {users: {}};
                  componentDidMount() {
-                   this.profileRef = firebase.database().ref("users");
+                     let uid = firebase.auth().currentUser.uid;
+                   this.profileRef = firebase.database().ref("users").child(uid).child("likes");
                    this.profileRef.on("value", snapshot => {
                      let profileInfo = snapshot.val();
-                     console.log(profileInfo);
                      if (profileInfo) {
                        this.setState({
                          users: profileInfo
@@ -24,17 +24,15 @@ export default class Likes extends Component {
                  }
 
                  render() {
+                     console.log(this.state.users)
                    // if(!this.state.users) return null;
                    let uid = firebase.auth().currentUser.uid;
                    let profileKeys = Object.keys(this.state.users);
                    let profileArray = profileKeys.map(key => {
-                     let profileObj = this.state.users[key].profile;
+                     let profileObj = this.state.users[key];
                      profileObj.id = key;
                      return profileObj;
                    });
-                   profileArray = profileArray.filter(
-                     profile => profile.id !== uid
-                   );
                    let profileItems = profileArray.map(profile => {
                      console.log(profile);
                      return (

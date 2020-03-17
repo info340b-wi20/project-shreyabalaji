@@ -21,6 +21,7 @@ export default class HomeProfiles extends Component {
     })
   }
 
+
   render() {
     // if(!this.state.users) return null;
     let profileKeys = Object.keys(this.state.users)
@@ -36,7 +37,7 @@ export default class HomeProfiles extends Component {
       console.log(profile)
       return (
 
-        <IndivCard profile={profile}/>
+        <IndivCard profile={profile} uid={this.props.user.uid}/>
 
       );
     })
@@ -59,12 +60,20 @@ export default class HomeProfiles extends Component {
 class IndivCard extends Component {
   state = {
     showCard: true
-  }
+  };
 
   toggleMenu = () => {
     this.setState({
       showCard: !this.state.showCard
-    })
+    });
+  };
+
+  likeThem = () => {
+    let profile = this.props.profile;
+    let uid = this.props.uid;
+    let profileRef = firebase.database().ref("users").child(uid).child("likes").child(profile.id);
+    profileRef.set(profile);
+    this.setState({showCard: false});
   }
 
   render() {
@@ -72,31 +81,44 @@ class IndivCard extends Component {
       return null;
     }
     let profile = this.props.profile;
- 
+
     return (
-
-    
-
-<div className="col-md-6 col-xl-3 d-flex">
-<div className="card mb-4">
-  <div className="card-body">
-    <div className="row">
-      <div className="col-sm">
-        <h2 className="card-title">{profile.name}, {profile.age}</h2>
-        <p className="card-text">What/who is your ideal date?:</p>
-        <p >{profile.qone}</p>
-        <p className="card-text">What are you looking for on this site, a long term relationship or fling?:</p>
-        <p>{profile.qtwo}</p>
-        <p className="card-text">Dog or Cat? Beach or mountains? Rain or shine?:</p>
-        <p>{profile.qthree}</p>
-        <a href="#" className="btn btn-info">Like</a>
-        <button style={{marginLeft: "10px"}} className="btn btn-info nah unneed" onClick={this.toggleMenu} >Nahhh</button>
-        
+      <div className="col-md-6 col-xl-3 d-flex">
+        <div className="card mb-4">
+          <div className="card-body">
+            <div className="row">
+              <div className="col-sm">
+                <h2 className="card-title">
+                  {profile.name}, {profile.age}
+                </h2>
+                <p className="card-text">What/who is your ideal date?:</p>
+                <p>{profile.qone}</p>
+                <p className="card-text">
+                  What are you looking for on this site, a long term
+                  relationship or fling?:
+                </p>
+                <p>{profile.qtwo}</p>
+                <p className="card-text">
+                  Dog or Cat? Beach or mountains? Rain or shine?:
+                </p>
+                <p>{profile.qthree}</p>
+                <button className="btn btn-info"
+                  onClick={this.likeThem}
+                >
+                  Like
+                </button>
+                <button
+                  style={{ marginLeft: "10px" }}
+                  className="btn btn-info nah unneed"
+                  onClick={this.toggleMenu}
+                >
+                  Nahhh
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
-</div>
-
-)
-    }}
+    );
+  }
+}
