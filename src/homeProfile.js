@@ -50,7 +50,7 @@ export default class HomeProfiles extends Component {
                   <p className="card-text">Dog or Cat? Beach or mountains? Rain or shine?:</p>
                   <p>{profile.qthree}</p>
                   <a href="#" className="btn btn-info">Like</a>
-                  <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nahhh</a>
+                  <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah unneed">Nahhh</a>
                 </div>
               </div>
             </div>

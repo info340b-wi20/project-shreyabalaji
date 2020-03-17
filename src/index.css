@@ -211,6 +211,17 @@
  .hidden {
      display: none;
  }
+
+ .unneed {
+    padding: 1px;
+ }
+ 
+ .nah {
+    position: absolute;
+    right:    5;
+    bottom:   0;
+ }
+ 
  
  
  @media (min-width: 598px) {
