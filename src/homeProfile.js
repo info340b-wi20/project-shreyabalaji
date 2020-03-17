@@ -23,6 +23,9 @@ export default class HomeProfiles extends Component {
 
 
   render() {
+    /* filter((profile) => {
+      return this.state.filterValue === "" || profile.gender
+    })*/
     // if(!this.state.users) return null;
     let profileKeys = Object.keys(this.state.users)
     let profileArray = profileKeys.map((key) => {

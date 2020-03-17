@@ -29,6 +29,28 @@ export default class Chat extends Component {
 	});
 	}
 	sendMessage = () => {
+		if (this.state.chats.length === 0) {
+      let chatId = this.props.match.params.messageId;
+      let ids = chatId.split("_");
+      let theirId = ids.filter(id => id != this.props.user.uid)[0];
+      // console.lgo
+      let profileRef = firebase
+        .database()
+        .ref("users")
+        .child(this.props.user.uid)
+        .child("profile");
+      profileRef.once("value", snapshot => {
+		let profileInfo = snapshot.val();
+		console.log(profileInfo, theirId)
+        firebase
+          .database()
+          .ref("users")
+          .child(theirId)
+          .child("messages")
+          .child(this.props.user.uid)
+          .set(profileInfo);
+      });
+    }
 	this.chatRef
 		.push({
 		uid: this.props.user.uid,
