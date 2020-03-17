@@ -4,10 +4,14 @@ import firebase from "firebase/app";
 
 export default class Likes extends Component {
                  //export allows other things to use this class.
-                state = {users: {}};
+                 state = { users: {} };
                  componentDidMount() {
-                     let uid = firebase.auth().currentUser.uid;
-                   this.profileRef = firebase.database().ref("users").child(uid).child("likes");
+                   let uid = firebase.auth().currentUser.uid;
+                   this.profileRef = firebase
+                     .database()
+                     .ref("users")
+                     .child(uid)
+                     .child("likes");
                    this.profileRef.on("value", snapshot => {
                      let profileInfo = snapshot.val();
                      if (profileInfo) {
@@ -19,12 +23,20 @@ export default class Likes extends Component {
                    // using the uid you can get profile info
                  }
 
-                 onMessage= () => {
-                    
-                 }
+                 messageThem = (profile) => {
+                   let uid = firebase.auth().currentUser.uid;
+                   let profileRef = firebase
+                     .database()
+                     .ref("users")
+                     .child(uid)
+                     .child("messages")
+                     .child(profile.id);
+                    profileRef.set(profile);
+                    firebase.database().ref("users").child(uid).child("likes").child(profile.id).remove();
+                 };
 
                  render() {
-                     console.log(this.state.users)
+                   console.log(this.state.users);
                    // if(!this.state.users) return null;
                    let uid = firebase.auth().currentUser.uid;
                    let profileKeys = Object.keys(this.state.users);
@@ -49,17 +61,26 @@ export default class Likes extends Component {
                                        alt="profile picture"
                                      />
                                      <div class="col-sm">
-                                    <h2 class="card-title">{profile.name}, {profile.age}</h2>
+                                       <h2 class="card-title">
+                                         {profile.name}, {profile.age}
+                                       </h2>
                                        <p class="card-text">Dog or Cat?</p>
-                                        <p>{profile.qone}</p>
+                                       <p>{profile.qone}</p>
                                        <p>Beach or mountains?</p>
-                                     <p>{profile.qtwo}</p>
+                                       <p>{profile.qtwo}</p>
                                        <p>Perfect date?</p>
-                                       <p>
-                                        {profile.qthree}
-                                       </p>
-                                       <a href="#" class="btn btn-info" onClick={()=> {}}>Message</a>
-                                       <a href="#" style={{ marginLeft: "10px" }} className="btn btn-info nah">Nvm!</a>
+                                       <p>{profile.qthree}</p>
+                                       <button
+                                         class="btn btn-info"
+                                         onClick={() => this.messageThem(profile)}>
+                                         Message
+                                       </button>
+                                       <button
+                                         style={{ marginLeft: "10px" }}
+                                         className="btn btn-info nah"
+                                       >
+                                         Nvm!
+                                       </button>
                                      </div>
                                    </div>
                                  </div>
