@@ -21,6 +21,7 @@ export default class Likes extends Component { //export allows other things to u
                                     <p>Doing something active, 
                                     like a hike :)</p>
                                     <a href="#" class="btn btn-info">Message</a>
+                                    <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Changed My Mind</a>
                                 </div>
                             </div>
                         </div>

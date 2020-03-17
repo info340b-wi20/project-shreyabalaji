@@ -130,8 +130,8 @@ class App extends Component {
               <Route path="/profile" component={Profile} />
               <Redirect to="/" />
             </Switch>
-            <Nav></Nav>
             <Footer></Footer>
+            <Nav></Nav>
           </div>
 
 

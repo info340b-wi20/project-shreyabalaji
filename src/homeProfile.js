@@ -20,6 +20,11 @@ export default class HomeProfiles extends Component {
     // using the uid you can get profile info
   }
 
+  // handleChange = (event) => {
+  //   //store that new value in the state, rendering the Component
+  //   this.setState({ messageInput: newValue });
+  // }
+
   render() {
     // if(!this.state.users) return null;
     let profileKeys = Object.keys(this.state.users)
@@ -37,7 +42,7 @@ export default class HomeProfiles extends Component {
             <div className="card-body">
               <div className="row">
                 <div className="col-sm">
-                  <h2 className="card-title"></h2>
+                  <h2 className="card-title">{profile.name}, {profile.age}</h2>
                   <p className="card-text">What/who is your ideal date?:</p>
                   <p >{profile.qone}</p>
                   <p className="card-text">What are you looking for on this site, a long term relationship or fling?:</p>
