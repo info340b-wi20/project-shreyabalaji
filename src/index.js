@@ -28,14 +28,14 @@ firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
 messaging.requestPermission()
-.then(function (){
+.then(function () {
 	console.log("You have permission");
 	return messaging.getToken();
 })
-.then(function(token){
+.then(function(token) {
 	console.log(token);
 })
-.catch(function(err){
+.catch(function(err) {
 	console.log("error occured");
 })
 
