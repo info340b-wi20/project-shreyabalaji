@@ -14,25 +14,6 @@ import SignUpForm from './components/signup/signupform';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-// export default class App extends Component { //export allows other things to use this class.
-    // render() {
-    //   return (
-        // <div className="container">
-            
-        //   <Header></Header>
-
-        //   <Switch>
-        //     <Route exact path="/" component={HomeProfiles} />
-        //     <Route path="/messages" component={Messages} />
-        //     <Route path="/likes" component={Likes} />
-        //     <Route path="/profile" component={Profile} />
-        //     <Redirect to="/" />
-        //   </Switch>
-        //   <Nav></Nav>
-        //   <Footer></Footer>
-        // </div>
-    //   );
-    // }
   
 class App extends Component {
   constructor(props) {

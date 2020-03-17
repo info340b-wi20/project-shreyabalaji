@@ -38,36 +38,43 @@ class SignUpForm extends Component {
 
 	render() {
 		return (
-			<form>
-				{/* email */}
-				<div className="form-group">
-					<label htmlFor="email">Email</label>
-					<input className="form-control"
-						id="email"
-						type="email"
-						name="email"
-						onChange={this.handleChange}
-					/>
-				</div>
+      <form onsubmit="return validateForm()">
+        {/* email */}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            className="form-control"
+            id="email"
+            type="email"
+            name="email"
+            onChange={this.handleChange}
+          />
+          <div class="error" id="nameErr"></div>
+        </div>
 
-				{/* password */}
-				<div className="form-group">
-					<label htmlFor="password">Password</label>
-					<input className="form-control"
-						id="password"
-						type="password"
-						name="password"
-						onChange={this.handleChange}
-					/>
-				</div>
+        {/* password */}
+        <div className="form-group">
+          <label htmlFor="password">Password</label>
+          <input
+            className="form-control"
+            id="password"
+            type="password"
+            name="password"
+            onChange={this.handleChange}
+          />
+        </div>
 
-				{/* buttons */}
-				<div className="form-group">
-					<button className="btn btn-primary mr-2" onClick={this.handleSignUp}>Sign-up</button>
-					<button className="btn btn-primary" onClick={this.handleSignIn}>Sign-in</button>
-				</div>
-			</form>
-		)
+        {/* buttons */}
+        <div className="form-group">
+          <button className="btn btn-primary mr-2" onClick={this.handleSignUp}>
+            Sign-up
+          </button>
+          <button className="btn btn-primary" onClick={this.handleSignIn}>
+            Sign-in
+          </button>
+        </div>
+      </form>
+    );
 	}
 }
 

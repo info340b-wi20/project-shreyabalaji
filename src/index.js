@@ -25,6 +25,19 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+const messaging = firebase.messaging();
+
+messaging.requestPermission()
+.then(function (){
+	console.log("You have permission");
+	return messaging.getToken();
+})
+.then(function(token){
+	console.log(token);
+})
+.catch(function(err){
+	console.log("error occured");
+})
 
 ReactDOM.render(<BrowserRouter> <App /> </BrowserRouter> , document.getElementById('root'));
 
