@@ -5,6 +5,10 @@
     padding: 20px;
  }
 
+ .no {
+    padding: 3px;
+  }
+
  #root {
      margin: auto;
  }

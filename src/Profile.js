@@ -2,17 +2,20 @@ import React, { Component } from 'react';
 import firebase from 'firebase'
 
 export default class Profile extends Component { //export allows other things to use this class.
-    state = {
+    state = { 
+        name: "",
+        age: "",
         qone: "",
         qtwo: "",
         qthree: "",
         gender: "",
         location: "",
         radius: "",
-        schoolorwork: ""
+        occupation: ""
     }
 
-    updateProfile = () => {
+    updateProfile = (event) => {
+        event.preventDefault();
     this.profileRef.update(this.state);
     }
 
@@ -39,66 +42,74 @@ export default class Profile extends Component { //export allows other things to
         console.log(this.state)
         return (
             <body>
-                <header class="border_color">
-                    <div class="container">
-                        <h1>Blind Cupid</h1>
-                        <p class="lead">Build your profile and add your preferences for your true love!</p>
+                <header className="border_color">
+                    <div className="container">
+                        <h1>Create Your Profile!</h1>
+                        <p className="lead">Add your preferences to build your profile and find your true love! Hit 'update' at the bottom of the page to submit your bio information.</p>
                     </div>
                 </header>
 
-                <section class="profile_image">
+                <section className="profile_image">
                     {/*code reference https://www.w3schools.com/howto/howto_css_image_overlay_icon.asp-->*/}
-                    <div class="container_profile">
-                        <img class="propicture" src="img/user_pic.jpg" alt="profile picture"/>
+                    <div className="container_profile">
+                        <img className="propicture" src="img/user_pic.jpg" alt="profile picture"/>
                     </div>
                 </section>
-                <section class="bio_info">
+                <section className="bio_info">
                     <h2>About You</h2>
                     <form>
                         <div>
-                            <label for="answer">What/who is your ideal date?:</label>
-                            <textarea class="form-control" id="answer" value={this.state.qone} name="qone" onChange={this.onChange}></textarea>
+                            <label for="answer">Name:</label>
+                            <input className="input" type="text" value={this.state.name} name="name" onChange={this.onChange}></input>
                         </div> 
-                        <button type="done"><i class="fas fa-pencil-alt" aria-label="done"></i></button>
+                    </form>
+                    <form>
+                        <div>
+                            <label for="answer">Age:</label>
+                            <input className="input" type="text" value={this.state.age} name="age" onChange={this.onChange}></input>
+                        </div> 
+                    </form>
+                    <form>
+                        <div>
+                            <label for="answer">What/who is your ideal date?:</label>
+                            <textarea className="form-control" id="answer" value={this.state.qone} name="qone" onChange={this.onChange}></textarea>
+                        </div> 
                     </form>
                     <form>
                         <div>
                             <label for="answer">What are you looking for on this site, a long term relationship or fling?:</label>
-                            <textarea class="form-control" id="answer" value={this.state.qtwo} name="qtwo" onChange={this.onChange} ></textarea>
+                            <textarea className="form-control" id="answer" value={this.state.qtwo} name="qtwo" onChange={this.onChange} ></textarea>
                         </div>
                     </form>
                     <form>
                         <div>
                             <label for="answer">Dog or Cat? Beach or mountains? Rain or shine?:</label>
-                            <textarea class="form-control" id="answer" vlaue={this.state.qthree} name="qthree" onChange={this.onChange}></textarea>
+                            <textarea className="form-control" id="answer" value={this.state.qthree} name="qthree" onChange={this.onChange}></textarea>
                         </div>
                     </form>
                 </section>
-                <section class="preferences">
-                    <h2>Gender</h2>
+                <section className="preferences">
                     <form>
                         <div>
-                            <textarea class="form-control" id="answer" vlaue={this.state.gender} name="gender" onChange={this.onChange}></textarea>
+                            Gender:
+                            <textarea className="form-control" id="answer" value={this.state.gender} name="gender" onChange={this.onChange}></textarea>
                         </div>
                     </form>
-                    
-                    <form class="location">
+                    <form className="location">
                         Location:
-                        <input type="text" value={this.state.location} name="location"></input>
-                        How many miles radius:
-                        <input type="text" name="radius" value={this.state.radius}></input>
+                        <input className="input" type="text" value={this.state.location} name="location" onChange={this.onChange}></input>
+                    </form>
+                    <form className="location">
+                        How many miles radius:  
+                        <input className="input" type="text" name="radius" value={this.state.radius} onChange={this.onChange}></input>
                     </form>
 
                     <form>
                         <div>
-                            <p>Would you prefer someone in...</p>
-                            <div>
-                                <label for="School"> School </label>
-                                <input type="radio" name="school" checked></input>
-                            </div>
-
-                            <label for=" Work "> Work </label>
-                            <input type="radio" name="work"></input>
+                            <form className="occupation">
+                                Would you prefer someone in work or school?:
+                                <input className="input" type="text" name="occupation" value={this.state.occupation} onChange={this.onChange}></input>
+                            </form>
                         </div>
                     </form>
 
