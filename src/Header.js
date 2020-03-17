@@ -7,7 +7,7 @@ export default class Header extends Component { //export allows other things to 
                 <div className="container">
                     <h1>Blind Cupid</h1>
                     <p className="lead">True love is blind.</p>
-                    <img className="blindfoldcup" src="img/blindcupid.jpg" alt="logo cupid" />
+                    {/*<img className="blindfoldcup" src="img/blindcupid.jpg" alt="logo cupid" />*/}
                 </div>
             </header>
         );

@@ -118,7 +118,7 @@ class App extends Component {
           {/* log out button is child element */}
           <div className="container">
             {this.state.user && (
-              <button className="btn btn-info logout pull-right" onClick={this.handleSignOut}>
+              <button style={{marginTop: "4px", marginRight: "4px"}} className="btn btn-info logout pull-right" onClick={this.handleSignOut}>
                 Log Out
               </button>
             )}

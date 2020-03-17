@@ -32,20 +32,20 @@ export default class HomeProfiles extends Component {
       console.log(profile)
       return (
 
-        <div class="col-md-6 col-xl-3 d-flex">
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-sm">
-                  <h2 class="card-title"></h2>
-                  <p class="card-text">Dog or Cat?</p>
-                  <p>{profile.qone}</p>
-                  <p>Beach or mountains?</p>
+        <div className="col-md-6 col-xl-3 d-flex">
+          <div className="card mb-4">
+            <div className="card-body">
+              <div className="row">
+                <div className="col-sm">
+                  <h2 className="card-title"></h2>
+                  <p className="card-text">What/who is your ideal date?:</p>
+                  <p >{profile.qone}</p>
+                  <p className="card-text">What are you looking for on this site, a long term relationship or fling?:</p>
                   <p>{profile.qtwo}</p>
-                  <p>Perfect date?</p>
+                  <p className="card-text">Dog or Cat? Beach or mountains? Rain or shine?:</p>
                   <p>{profile.qthree}</p>
-                  <a href="#" class="btn btn-info">Like</a>
-                  <a href="#" class="btn btn-info nah">Nahhh</a>
+                  <a href="#" className="btn btn-info">Like</a>
+                  <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nahhh</a>
                 </div>
               </div>
             </div>
@@ -55,8 +55,8 @@ export default class HomeProfiles extends Component {
     })
     return (
       <main>
-        <div class="container">
-          <div class="row">
+        <div className="container">
+          <div className="row">
             {profileItems}
           </div>
         </div>
