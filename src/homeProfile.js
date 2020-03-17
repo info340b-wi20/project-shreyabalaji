@@ -7,7 +7,6 @@ export default class HomeProfiles extends Component {
     users: {},
     showCard: false
   }
-  //export allows other things to use this class.
   componentDidMount() {
     this.profileRef = firebase.database().ref("users")
     this.profileRef.on("value", (snapshot) => {
