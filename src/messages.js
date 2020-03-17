@@ -18,7 +18,7 @@ export default class Messages extends Component { //export allows other things t
     state = {
         chosen: [],
         messageIndex: 0,
-        chats: [],
+        messages: [],
         messageList: null,
         currentChat: 0,
         showMessages: false,
@@ -28,15 +28,25 @@ export default class Messages extends Component { //export allows other things t
 
 
     componentDidMount() {
-        fetch("messages.json")
-            .then((res) => {
-                return res.json();
-            })
-            .then((data) => {
+        let uid = firebase.auth().currentUser.uid;
+        firebase
+        .database()
+        .ref("users")
+        .child(uid)
+        .child("messages").on("value", snapshot => {
+            let messageObj = snapshot.val();
+            console.log(messageObj)
+            if (messageObj) {
+                 let messageArray = Object.keys(messageObj).map(key => {
+                   let obj = messageObj[key];
+                   obj.id = key;
+                   return obj;
+                 });
                 this.setState({
-                    chats: data.chats
-                })
-            });
+                    messages: messageArray
+                });
+            }
+        })
     }
 
     handleChange = (event) => {
@@ -58,21 +68,21 @@ export default class Messages extends Component { //export allows other things t
         })
     }
 
-    addMessage = () => {
-        let messageInput = this.state.messageInput;
-        let messageObject = { "sender": "me", "reciever": "them", "content": messageInput };
-        let messageIndex = this.state.messageIndex;
-        this.state.chats[messageIndex].messages.push(messageObject);
-        this.setState({
-            chats: this.state.chats,
-            messageInput: ''
-        })
-    }
+    // addMessage = () => {
+    //     let messageInput = this.state.messageInput;
+    //     let messageObject = { "sender": "me", "reciever": "them", "content": messageInput };
+    //     let messageIndex = this.state.messageIndex;
+    //     this.state.chats[messageIndex].messages.push(messageObject);
+    //     this.setState({
+    //         chats: this.state.chats,
+    //         messageInput: ''
+    //     })
+    // }
 
     render() {
         console.log(this.state.chats);
             
-        let renderedChats = this.state.chats.map((chat, index) => {
+        let renderedChats = this.state.messages.map((chat, index) => {
             let uid1 = firebase.auth().currentUser.uid;
             let uid2 = chat.id; // the id you get when clicking on a chat
             let combined = uid1 > uid2 ? uid1 + "_" + uid2 : uid2 + "_" + uid1;
@@ -80,7 +90,7 @@ export default class Messages extends Component { //export allows other things t
               <Link to={"messages/" + combined}>
                 <li class="chat list-group-item">
                   <div>
-                    <div style={{ opacity: this.state.chats.length / 100 }}>
+                    <div style={{ opacity: this.state.messages.length / 100 }}>
                       <img
                         style={{
                           width: "50%",
@@ -106,37 +116,35 @@ export default class Messages extends Component { //export allows other things t
             return <li class="chat list-group-item"><div class={mess.sender === "me" ? "message-me" : "message-them"}><p>{mess.content}</p></div></li>
         })
 
-        let messageComponent;
-        if (this.state.chats.length > 0) {
-            messageComponent = (
-                <div>
+        // let messageComponent;
+        // if (this.state.messages.length > 0) {
+        //     messageComponent = (
+        //         <div>
                                     
-                    {this.state.showMessages && <button onClick={() => this.setState({ showMessages: false })}>Back</button>}
-                    <div style={{ opacity: (this.state.points / 100), width: "100px", height: "100px", marginLeft: "auto", marginRight: "auto", textAlign: "center"}}>
-                        <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
-                    </div> 
-                    {renderedMessages}
-                    <form>
-                        <label for="enter-text">Message:</label>
-                        <input type="text" class="form-control" id="enter-text" name="enter-text" onChange={this.handleChange} value={this.state.messageInput}></input>
-                    </form>
-                    <Button className="send-button" variant="primary" size="sm" onClick={(event) => {
-                        event.preventDefault();
-                        this.addMessage();
-                        this.setState({
-                            points: this.state.points + 10
-                        })
-                    }
-                    }>send</Button>
-                </div>
-            )
-        }
+        //             {this.state.showMessages && <button onClick={() => this.setState({ showMessages: false })}>Back</button>}
+        //             <div style={{ opacity: (this.state.points / 100), width: "100px", height: "100px", marginLeft: "auto", marginRight: "auto", textAlign: "center"}}>
+        //                 <img src={this.state.chats[this.state.messageIndex].picture} style={{width: "100%"}} alt={this.state.chats[this.state.messageIndex].name}></img>
+        //             </div> 
+        //             {renderedMessages}
+        //             <form>
+        //                 <label for="enter-text">Message:</label>
+        //                 <input type="text" class="form-control" id="enter-text" name="enter-text" onChange={this.handleChange} value={this.state.messageInput}></input>
+        //             </form>
+        //             <Button className="send-button" variant="primary" size="sm" onClick={(event) => {
+        //                 event.preventDefault();
+        //                 this.addMessage();
+        //                 this.setState({
+        //                     points: this.state.points + 10
+        //                 })
+        //             }
+        //             }>send</Button>
+        //         </div>
+        //     )
+        // }
         return (
             <ol className="msg">
-                {!this.state.showMessages ?
-                    renderedChats
-                    :
-                    messageComponent}
+
+                    {renderedChats}
             </ol>
         );
     }
