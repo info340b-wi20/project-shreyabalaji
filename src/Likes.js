@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
 export default class Likes extends Component { //export allows other things to use this class.
+
+    
     render() {
       return (
         <main>
@@ -20,8 +22,8 @@ export default class Likes extends Component { //export allows other things to u
                                     <p>Perfect date?</p> 
                                     <p>Doing something active, 
                                     like a hike :)</p>
-                                    <a href="#" class="btn btn-info">Message</a>
-                                    <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
+                                    <button class="btn btn-info">Message</button>
+                                    <button style={{marginLeft: "10px"}} className="btn btn-info nah" onClick={this.toggleMenu} >Nvm</button>
                                 </div>
                             </div>
                         </div>
@@ -42,9 +44,8 @@ export default class Likes extends Component { //export allows other things to u
                                     <p><em>Perfect date?</em></p> 
                                     <p>Doing anything that will</p>
                                     <p>let us really get to know eachother!</p>
-                                <a href="#" class="btn btn-info">Message</a>
-                                <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
-                            </div>
+                                <button class="btn btn-info">Message</button>
+                                <button style={{marginLeft: "10px"}} className="btn btn-info nah" onClick={this.toggleMenu} >Nvm</button>                            </div>
                         </div>
                     </div>
                 </div>
@@ -61,9 +62,8 @@ export default class Likes extends Component { //export allows other things to u
                             <p><em>Beach or mountains?</em></p>
                             <p>Beaches for sure.</p>
                             <p><em>Perfect date?</em> Going to a local indie concert and grabbing drinks after!</p>
-                            <a href="#" class="btn btn-info">Message</a>
-                            <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
-                            </div>
+                            <button class="btn btn-info">Message</button>
+                            <button style={{marginLeft: "10px"}} className="btn btn-info nah" onClick={this.toggleMenu} >Nvm</button>                            </div>
                         </div>
                         </div>
                     </div>
@@ -82,9 +82,8 @@ export default class Likes extends Component { //export allows other things to u
                             <p>Neither! I love forests.</p>
                             <p><em>Perfect date?</em></p>
                             <p>Dates make me nervous so anything as chilled out as possible.</p>
-                            <a href="#" class="btn btn-info">Message</a>
-                            <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah">Nvm!</a>
-                            </div>
+                            <button class="btn btn-info">Message</button>
+                            <button style={{marginLeft: "10px"}} className="btn btn-info nah" onClick={this.toggleMenu} >Nvm</button>                            </div>
                         </div>
                         </div>
                     </div>
