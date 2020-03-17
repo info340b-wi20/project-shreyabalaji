@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import firebase from 'firebase';
+import { Button } from "react-bootstrap";
 
 export default class HomeProfiles extends Component {
   state = {
-    users: {}
+    users: {},
+    showCard: false
   }
   //export allows other things to use this class.
   componentDidMount() {
@@ -17,13 +19,7 @@ export default class HomeProfiles extends Component {
         })
       }
     })
-    // using the uid you can get profile info
   }
-
-  // handleChange = (event) => {
-  //   //store that new value in the state, rendering the Component
-  //   this.setState({ messageInput: newValue });
-  // }
 
   render() {
     // if(!this.state.users) return null;
@@ -40,25 +36,8 @@ export default class HomeProfiles extends Component {
       console.log(profile)
       return (
 
-        <div className="col-md-6 col-xl-3 d-flex">
-          <div className="card mb-4">
-            <div className="card-body">
-              <div className="row">
-                <div className="col-sm">
-                  <h2 className="card-title">{profile.name}, {profile.age}</h2>
-                  <p className="card-text">What/who is your ideal date?:</p>
-                  <p >{profile.qone}</p>
-                  <p className="card-text">What are you looking for on this site, a long term relationship or fling?:</p>
-                  <p>{profile.qtwo}</p>
-                  <p className="card-text">Dog or Cat? Beach or mountains? Rain or shine?:</p>
-                  <p>{profile.qthree}</p>
-                  <a href="#" className="btn btn-info">Like</a>
-                  <a href="#" style={{marginLeft: "10px"}} className="btn btn-info nah unneed">Nahhh</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <IndivCard profile={profile}/>
+
       );
     })
     return (
@@ -72,3 +51,52 @@ export default class HomeProfiles extends Component {
     )
   }
 }
+
+
+
+
+
+class IndivCard extends Component {
+  state = {
+    showCard: true
+  }
+
+  toggleMenu = () => {
+    this.setState({
+      showCard: !this.state.showCard
+    })
+  }
+
+  render() {
+    if (!this.state.showCard) {
+      return null;
+    }
+    let profile = this.props.profile;
+ 
+    return (
+
+    
+
+<div className="col-md-6 col-xl-3 d-flex">
+<div className="card mb-4">
+  <div className="card-body">
+    <div className="row">
+      <div className="col-sm">
+        <h2 className="card-title">{profile.name}, {profile.age}</h2>
+        <p className="card-text">What/who is your ideal date?:</p>
+        <p >{profile.qone}</p>
+        <p className="card-text">What are you looking for on this site, a long term relationship or fling?:</p>
+        <p>{profile.qtwo}</p>
+        <p className="card-text">Dog or Cat? Beach or mountains? Rain or shine?:</p>
+        <p>{profile.qthree}</p>
+        <a href="#" className="btn btn-info">Like</a>
+        <button style={{marginLeft: "10px"}} className="btn btn-info nah unneed" onClick={this.toggleMenu} >Nahhh</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+)
+    }}
