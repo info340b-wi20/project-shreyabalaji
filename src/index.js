@@ -25,23 +25,23 @@ const firebaseConfig = {
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-const messaging = firebase.messaging();
+// const messaging = firebase.messaging();
 
-messaging.requestPermission()
-.then(function () {
-	console.log("You have permission");
-	return messaging.getToken();
-})
-.then(function(token) {
-	console.log(token);
-})
-.catch(function(err) {
-	console.log("error occured");
-})
+// messaging.requestPermission()
+// .then(function () {
+// 	console.log("You have permission");
+// 	return messaging.getToken();
+// })
+// .then(function(token) {
+// 	console.log(token);
+// })
+// .catch(function(err) {
+// 	console.log("error occured");
+// })
 
-messaging.onMessage(function(payload){
-	console.log('onMessage', payload);
-})
+// messaging.onMessage(function(payload){
+// 	console.log('onMessage', payload);
+// })
 
 ReactDOM.render(<BrowserRouter> <App /> </BrowserRouter> , document.getElementById('root'));
 

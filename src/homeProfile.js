@@ -33,6 +33,9 @@ export default class HomeProfiles extends Component {
       profileObj.id = key;
       return profileObj;
     })
+    profileArray = profileArray.filter(
+      profile => profile.id !== this.props.user.uid
+    );
     let profileItems = profileArray.map((profile) => {
       console.log(profile)
       return (

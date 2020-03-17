@@ -13,6 +13,7 @@ import HomeProfiles from './homeProfile';
 import SignUpForm from './components/signup/signupform';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import Chat from './Chat';
 
   
 class App extends Component {
@@ -99,14 +100,28 @@ class App extends Component {
           {/* log out button is child element */}
           <div className="container">
             {this.state.user && (
-              <button style={{marginTop: "4px", marginRight: "4px"}} className="btn btn-info logout pull-right" onClick={this.handleSignOut}>
+              <button
+                style={{ marginTop: "4px", marginRight: "4px" }}
+                className="btn btn-info logout pull-right"
+                onClick={this.handleSignOut}
+              >
                 Log Out
               </button>
             )}
             <Header></Header>
             <Switch>
-              <Route exact path="/" component={HomeProfiles} />
-              <Route path="/messages" component={Messages} />
+              <Route
+                exact
+                path="/"
+                render={renderProps => <HomeProfiles {...renderProps} user={this.state.user} />}
+              />
+              <Route exact path="/messages" component={Messages} />
+              <Route
+                path="/messages/:messageId"
+                render={renderProps => (
+                  <Chat {...renderProps} user={this.state.user} />
+                )}
+              />
               <Route path="/likes" component={Likes} />
               <Route path="/profile" component={Profile} />
               <Redirect to="/" />
@@ -114,9 +129,6 @@ class App extends Component {
             <Footer></Footer>
             <Nav></Nav>
           </div>
-
-
-          
         </div>
       );
     }

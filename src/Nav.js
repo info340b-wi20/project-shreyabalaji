@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome'
 import faStyles from 'font-awesome/css/font-awesome.css'
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { Link } from 'react-router-dom';
+
 
 export default class Nav extends Component { //export allows other things to use this class.
     render() {
@@ -11,10 +13,10 @@ export default class Nav extends Component { //export allows other things to use
             // </head>
             <nav>
                 <ul>
-                    <li><a href="index"><FontAwesome className="fas fa-home" aria-label="home feed"/></a></li>
-                    <li><a href="Likes"><FontAwesome className="far fa-heart" aria-label="Your likes"/></a></li>
-                    <li><a href="Messages"><FontAwesome className="fas fa-comments" aria-label="messages"/></a></li>
-                    <li><a href="Profile"><FontAwesome className="fas fa-user" aria-label="profile"/></a></li>
+                    <li><Link to="/"><FontAwesome className="fas fa-home" aria-label="home feed"/></Link></li>
+                    <li><Link to="/Likes"><FontAwesome className="far fa-heart" aria-label="Your likes"/></Link></li>
+                    <li><Link to="/messages"><FontAwesome className="fas fa-comments" aria-label="messages"/></Link></li>
+                    <li><Link to="/profile"><FontAwesome className="fas fa-user" aria-label="profile"/></Link></li>
                 </ul>
             </nav>
         );

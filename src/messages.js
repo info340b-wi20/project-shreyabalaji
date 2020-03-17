@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import firebase from 'firebase/app';
 import 'firebase/database';
+import { Link } from "react-router-dom";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyAurYgiqqhxJ1uW-X5XHYYHGBr6vZPDGdU",
@@ -70,21 +71,34 @@ export default class Messages extends Component { //export allows other things t
 
     render() {
         console.log(this.state.chats);
+            
         let renderedChats = this.state.chats.map((chat, index) => {
+            let uid1 = firebase.auth().currentUser.uid;
+            let uid2 = chat.id; // the id you get when clicking on a chat
+            let combined = uid1 > uid2 ? uid1 + "_" + uid2 : uid2 + "_" + uid1;
             return (
-              <li
-                class="chat list-group-item"
-                onClick={() => this.clickedChat(index)}>
-                <div>
-                  <div style={{ opacity: this.state.chats.length / 100 }}>
-                    <img style={{width: "50%",marginLeft: "auto", marginRight: "auto"}}class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+              <Link to={"messages/" + combined}>
+                <li class="chat list-group-item">
+                  <div>
+                    <div style={{ opacity: this.state.chats.length / 100 }}>
+                      <img
+                        style={{
+                          width: "50%",
+                          marginLeft: "auto",
+                          marginRight: "auto"
+                        }}
+                        class="chat-pic chat img"
+                        src={chat.picture}
+                        alt={chat.name}
+                      ></img>
+                    </div>
                   </div>
-                </div>
-                <div class="chat-content chat">
-                  <h4>{chat.name}</h4>
-                  <div>{chat.lastMessage}</div>
-                </div>
-              </li>
+                  <div class="chat-content chat">
+                    <h4>{chat.name}</h4>
+                    <div>{chat.lastMessage}</div>
+                  </div>
+                </li>
+              </Link>
             );
         })
 
