@@ -77,7 +77,7 @@ export default class Messages extends Component { //export allows other things t
                 onClick={() => this.clickedChat(index)}>
                 <div>
                   <div style={{ opacity: this.state.chats.length / 100 }}>
-                    <img style={{width: "50%"}}class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
+                    <img style={{width: "50%",marginLeft: "auto", marginRight: "auto"}}class="chat-pic chat img" src={chat.picture} alt={chat.name}></img>
                   </div>
                 </div>
                 <div class="chat-content chat">
