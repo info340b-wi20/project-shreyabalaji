@@ -13,7 +13,12 @@ export default class Profile extends Component { //export allows other things to
         radius: "",
         occupation: "",
         picture: "",
+        id: "",
     }
+
+    // state= {
+    //     id: firebase.auth().currentUser.uid
+    // }
 
     updateProfile = (event) => {
         event.preventDefault();
@@ -39,10 +44,10 @@ export default class Profile extends Component { //export allows other things to
         })
     }
 
-    onUpload (event) {
-        let file = event.target.files;
-        let reader = new FileReader;
-    }
+    // onUpload (event) {
+    //     let file = event.target.files;
+    //     let reader = new FileReader;
+    // }
         
     render() {
         console.log(this.state)
@@ -190,11 +195,11 @@ export default class Profile extends Component { //export allows other things to
                   <label for="answer">Picture</label>
                   <input
                     className="input"
-                    type="file"
+                    type="text"
                     value={this.state.picture}
-                    //value = {firebase.storage().ref(firebase.auth().currentUser.uid).child("")}
+                    //value = {firebase.storage().ref(firebase.auth().currentUser.uid).put("")}
                     name="picture"
-                    onChange={(event)=>this.onUpload(event)}
+                    onChange={this.onChange}
                   ></input>
                 </div>
               </form>

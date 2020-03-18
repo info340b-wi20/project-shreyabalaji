@@ -14,6 +14,7 @@ import SignUpForm from './components/signup/signupform';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import Chat from './Chat';
+import { Alert } from 'reactstrap';
 
   
 class App extends Component {
@@ -109,14 +110,14 @@ class App extends Component {
                 Log Out
               </button>
             )}
+            <Alert color="danger">Fill out your profile before continuing!</Alert>
             <Header></Header>
             <Switch>
-              <Route path="/profile" component={Profile} />
               <Route
                 exact
                 path="/"
                 render={renderProps => (
-                  <HomeProfiles {...renderProps} user={this.state.user} />
+                  <Profile {...renderProps} user={this.state.user} />
                 )}
               />
               <Route exact path="/messages" component={Messages} />
@@ -127,6 +128,7 @@ class App extends Component {
                 )}
               />
               <Route path="/likes" component={Likes} />
+              <Route path="/homeProfile" component={HomeProfiles} />
               <Redirect to="/" />
             </Switch>
             <Footer></Footer>
