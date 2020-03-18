@@ -35,7 +35,6 @@ export default class Profile extends Component { //export allows other things to
                 })
             }
         })
-        // using the uid you can get profile info
     }
 
     onChange = (event) => {
@@ -44,10 +43,6 @@ export default class Profile extends Component { //export allows other things to
         })
     }
 
-    // onUpload (event) {
-    //     let file = event.target.files;
-    //     let reader = new FileReader;
-    // }
         
     render() {
         console.log(this.state)
