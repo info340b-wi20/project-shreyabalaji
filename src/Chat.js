@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import firebase from "firebase/app";
+import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default class Chat extends Component {
                  //export allows other things to use this class.
@@ -70,13 +73,20 @@ export default class Chat extends Component {
      });
 		return (
       <div>
-		  <div>
-			  {renderedMessages}
-		  </div>
+        <Link to="/messages">
+          <button ariant="primary" className="btn btn-info">
+            Back
+          </button>
+        </Link>
+        <div>{renderedMessages}</div>
         <div>
-          <input value={this.state.chatInput} onChange={(event) => this.setState({ chatInput: event.target.value })}></input>
-		  <button onClick={this.sendMessage}>Send Message</button>
-		  <button onClick={this.state.chats}>Back</button>
+          <input
+            value={this.state.chatInput}
+            onChange={event => this.setState({ chatInput: event.target.value })}
+          ></input>
+          <button className="btn btn-info" onClick={this.sendMessage}>
+            Send Message
+          </button>
         </div>
       </div>
     );

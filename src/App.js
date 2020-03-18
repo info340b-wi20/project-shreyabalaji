@@ -128,7 +128,7 @@ class App extends Component {
                 )}
               />
               <Route path="/likes" component={Likes} />
-              <Route path="/homeProfile" component={HomeProfiles} />
+              <Route path="/HomeProfiles" component={HomeProfiles} />
               <Redirect to="/" />
             </Switch>
             <Footer></Footer>

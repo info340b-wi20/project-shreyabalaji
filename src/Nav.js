@@ -10,7 +10,7 @@ export default class Nav extends Component { //export allows other things to use
         return (
             <nav>
                 <ul>
-                    <li><Link to="/homeProfile"><FontAwesome className="fas fa-home" aria-label="home feed"/></Link></li>
+                    <li><Link to="/HomeProfiles"><FontAwesome className="fas fa-home" aria-label="home feed"/></Link></li>
                     <li><Link to="/Likes"><FontAwesome className="far fa-heart" aria-label="Your likes"/></Link></li>
                     <li><Link to="/messages"><FontAwesome className="fas fa-comments" aria-label="messages"/></Link></li>
                     <li><Link to="/"><FontAwesome className="fas fa-user" aria-label="profile"/></Link></li>
