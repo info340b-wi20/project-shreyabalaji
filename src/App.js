@@ -110,7 +110,9 @@ class App extends Component {
                 Log Out
               </button>
             )}
-            <Alert color="danger">Fill out your profile before continuing!</Alert>
+            <Alert color="danger">
+              Fill out your profile before continuing!
+            </Alert>
             <Header></Header>
             <Switch>
               <Route
@@ -128,7 +130,10 @@ class App extends Component {
                 )}
               />
               <Route path="/likes" component={Likes} />
-              <Route path="/HomeProfiles" component={HomeProfiles} />
+              <Route
+                path="/HomeProfiles"
+                component={() => <HomeProfiles user={this.state.user} />}
+              />
               <Redirect to="/" />
             </Switch>
             <Footer></Footer>
