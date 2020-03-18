@@ -16,9 +16,6 @@ export default class Profile extends Component { //export allows other things to
         id: "",
     }
 
-    // state= {
-    //     id: firebase.auth().currentUser.uid
-    // }
 
     updateProfile = (event) => {
         event.preventDefault();

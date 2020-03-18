@@ -10,7 +10,7 @@ export default class Chat extends Component {
 	state = {
 		chatInput: ""
 	}
-
+	
 	componentDidMount() {
 	let chatId = this.props.match.params.messageId;
 	this.chatRef = firebase
@@ -38,7 +38,7 @@ export default class Chat extends Component {
       let theirId = ids.filter(id => id != this.props.user.uid)[0];
 	  let profileRef = firebase
 	  let points = this.state.points;
-	  this.setState= {points: {points} + 1}
+	  this.setState = {points: {points} + 1}
         .database()
         .ref("users")
         .child(this.props.user.uid)
@@ -54,7 +54,6 @@ export default class Chat extends Component {
           .child(this.props.user.uid)
           .set(profileInfo);
 	  });
-	  console.log(points);
     }
 	this.chatRef
 		.push({
