@@ -37,8 +37,6 @@ export default class Chat extends Component {
       let ids = chatId.split("_");
       let theirId = ids.filter(id => id != this.props.user.uid)[0];
 	  let profileRef = firebase
-	  let points = this.state.points;
-	  this.setState = {points: {points} + 1}
         .database()
         .ref("users")
         .child(this.props.user.uid)

@@ -110,10 +110,10 @@ class App extends Component {
                 Log Out
               </button>
             )}
+            <Header></Header>
             <Alert color="danger">
               Fill out your profile before continuing!
             </Alert>
-            <Header></Header>
             <Switch>
               <Route
                 exact

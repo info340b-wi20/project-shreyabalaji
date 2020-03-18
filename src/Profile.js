@@ -51,7 +51,7 @@ export default class Profile extends Component { //export allows other things to
                 <p className="lead">
                   Add your preferences to build your profile and find your true
                   love! Hit 'update' at the bottom of the page to submit your
-                  bio information.
+                  bio information. As you message people you match with more their picture will slowly be revealed!
                 </p>
               </div>
             </header>
