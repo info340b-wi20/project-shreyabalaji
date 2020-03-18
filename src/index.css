@@ -226,6 +226,14 @@
 
  h4 {
     color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0px;
+    margin-top: 8px;
+ }
+
+ .chat-content {
+     text-align: left;
  }
 
 div {
