@@ -59,8 +59,8 @@ export default class Messages extends Component { //export allows other things t
 
     clickedChat = (index) => {
         console.log(index)
-        let chats = this.state.chats;
-        let messages = chats[index];
+        let chats = this.state.messages;
+        let messages = messages[index];
         let points = this.state.points;
         this.setState({
             showMessages: true,
@@ -81,7 +81,7 @@ export default class Messages extends Component { //export allows other things t
     // }
 
     render() {
-        console.log(this.state.chats);
+        console.log(this.state.messages);
             
         let renderedChats = this.state.messages.map((chat, index) => {
             let uid1 = firebase.auth().currentUser.uid;
@@ -92,6 +92,7 @@ export default class Messages extends Component { //export allows other things t
                 <li class="chat list-group-item">
                   <div>
                     <div style={{ opacity: this.state.messages.length / 10 }}>
+                        {console.log(this.state.messages.length / 10)}
                       <img
                         style={{
                           width: "50%",

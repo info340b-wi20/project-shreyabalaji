@@ -38,6 +38,11 @@ export default class Profile extends Component { //export allows other things to
             [event.target.name]: event.target.value
         })
     }
+
+    onUpload (event) {
+        let file = event.target.files;
+        let reader = new FileReader;
+    }
         
     render() {
         console.log(this.state)
@@ -185,10 +190,11 @@ export default class Profile extends Component { //export allows other things to
                   <label for="answer">Picture</label>
                   <input
                     className="input"
-                    type="text"
+                    type="file"
                     value={this.state.picture}
+                    //value = {firebase.storage().ref(firebase.auth().currentUser.uid).child("")}
                     name="picture"
-                    onChange={this.onChange}
+                    onChange={(event)=>this.onUpload(event)}
                   ></input>
                 </div>
               </form>

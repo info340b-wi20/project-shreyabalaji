@@ -4,7 +4,9 @@ import firebase from "firebase/app";
 
 export default class Likes extends Component {
     //export allows other things to use this class.
-    state = { users: {} };
+    state = { 
+        users: {},
+    };
     componentDidMount() {
         let uid = firebase.auth().currentUser.uid;
         this.profileRef = firebase
@@ -61,11 +63,12 @@ export default class Likes extends Component {
                                     <h2 class="card-title">
                                         {profile.name}, {profile.age}
                                     </h2>
-                                    <p class="card-text">Dog or Cat?</p>
+                                    <p class="card-text">What/who is your ideal date?:</p>
                                     <p>{profile.qone}</p>
-                                    <p>Beach or mountains?</p>
+                                    <p className="card-text">What are you looking for on this site, a long term
+                                    relationship or fling?:</p>
                                     <p>{profile.qtwo}</p>
-                                    <p>Perfect date?</p>
+                                    <p className="card-text">Dog or Cat? Beach or mountains? Rain or shine?:</p>
                                     <p>{profile.qthree}</p>
                                     <button
                                         class="btn btn-info"
