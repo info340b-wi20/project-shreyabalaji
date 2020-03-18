@@ -68,6 +68,7 @@ class App extends Component {
   //A callback function for logging in existing users
   handleSignIn = (email, password) => {
     this.setState({ errorMessage: null });
+
     firebase.auth().signInWithEmailAndPassword(email, password)
       .catch((err) => {
         this.setState({ errorMessage: err.message });
@@ -110,10 +111,13 @@ class App extends Component {
             )}
             <Header></Header>
             <Switch>
+              <Route path="/profile" component={Profile} />
               <Route
                 exact
                 path="/"
-                render={renderProps => <HomeProfiles {...renderProps} user={this.state.user} />}
+                render={renderProps => (
+                  <HomeProfiles {...renderProps} user={this.state.user} />
+                )}
               />
               <Route exact path="/messages" component={Messages} />
               <Route
@@ -123,7 +127,6 @@ class App extends Component {
                 )}
               />
               <Route path="/likes" component={Likes} />
-              <Route path="/profile" component={Profile} />
               <Redirect to="/" />
             </Switch>
             <Footer></Footer>

@@ -8,9 +8,6 @@ import { Link } from 'react-router-dom';
 export default class Nav extends Component { //export allows other things to use this class.
     render() {
         return (
-            // <head>
-            //     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-            // </head>
             <nav>
                 <ul>
                     <li><Link to="/"><FontAwesome className="fas fa-home" aria-label="home feed"/></Link></li>

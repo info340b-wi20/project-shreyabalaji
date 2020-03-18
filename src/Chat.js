@@ -33,7 +33,6 @@ export default class Chat extends Component {
       let chatId = this.props.match.params.messageId;
       let ids = chatId.split("_");
       let theirId = ids.filter(id => id != this.props.user.uid)[0];
-      // console.lgo
       let profileRef = firebase
         .database()
         .ref("users")
@@ -77,6 +76,7 @@ export default class Chat extends Component {
         <div>
           <input value={this.state.chatInput} onChange={(event) => this.setState({ chatInput: event.target.value })}></input>
 		  <button onClick={this.sendMessage}>Send Message</button>
+		  <button onClick={this.state.chats}>Back</button>
         </div>
       </div>
     );
